@@ -13,7 +13,9 @@ export default function Projects() {
     <ThemeProvider theme={theme}>
       <Box sx={{ flexGrow: 1 }}>
         <Head>
-          <title>Projects - Portfolio</title>
+          <title>Projects - Hayden O'Neill</title>
+          <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+          <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         </Head>
 
         <Navbar />

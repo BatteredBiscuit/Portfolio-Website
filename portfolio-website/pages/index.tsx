@@ -12,8 +12,9 @@ export default function Home() {
     <ThemeProvider theme={theme}>
       <Box sx={{ flexGrow: 1 }}>
         <Head>
-          <title>Your Name - Portfolio</title>
-          <link rel="icon" href="/favicon.ico" />
+          <title>Hayden O'Neill - Portfolio</title>
+          <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+          <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         </Head>
 
         <Navbar />

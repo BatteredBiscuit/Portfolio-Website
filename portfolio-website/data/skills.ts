@@ -15,7 +15,7 @@ export const skills: Skill[] = [
       { name: "Python", imagePath: "/images/skills/python.png" },
       { name: "Java", imagePath: "/images/skills/java.png" },
       { name: "C++", imagePath: "/images/skills/cpp.png" },
-      { name: "SQL", imagePath: "/images/skills/sql.png" }
+      { name: "SQL" }
     ]
   },
   {
@@ -50,7 +50,8 @@ export const skills: Skill[] = [
       { name: "AWS" },
       { name: "Firebase" },
       { name: "Docker" },
-      { name: "Kubernetes" }
+      { name: "Kubernetes" },
+      { name: "Azure" }
     ]
   },
   {

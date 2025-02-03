@@ -13,7 +13,9 @@ export default function About() {
     <ThemeProvider theme={theme}>
       <Box sx={{ flexGrow: 1 }}>
         <Head>
-          <title>About Me - Portfolio</title>
+          <title>About - Hayden O'Neill</title>
+          <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+          <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         </Head>
         
         <Navbar />
@@ -28,8 +30,8 @@ export default function About() {
                   margin: 'auto',
                   mb: isMobile ? 2 : 0
                 }}
-                alt="Your Name"
-                src="/your-photo.jpg"
+                alt="Hayden O'Neill"
+                src="/images/myself.png"
               />
             </Grid>
             <Grid item xs={12} md={8}>

@@ -14,7 +14,9 @@ export default function Experience() {
     <ThemeProvider theme={theme}>
       <Box sx={{ flexGrow: 1 }}>
         <Head>
-          <title>Experience - Portfolio</title>
+          <title>Experience - Hayden O'Neill</title>
+          <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+          <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         </Head>
 
         <Navbar />
