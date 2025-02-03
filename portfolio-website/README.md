@@ -1,3 +1,1 @@
-# BatteredBiscuit.github.io
-
-Portfolio Website
+This is a starter template for [Learn Next.js](https://nextjs.org/learn).
