@@ -10,53 +10,53 @@ export const skills: Skill[] = [
   {
     category: "Programming Languages",
     items: [
-      { name: "TypeScript", imagePath: "images/skills/TypeScript.png" },
-      { name: "JavaScript", imagePath: "images/skills/JavaScript.png" },
-      { name: "Java", imagePath: "images/skills/Java.png" },
-      { name: "Python", imagePath: "images/skills/Python.png" },
-      { name: "C#", imagePath: "images/skills/CS.png" },
-      { name: "SQL", imagePath: "images/skills/SQL.png" },
+      { name: "TypeScript", imagePath: "images/skill/typescript.png" },
+      { name: "JavaScript", imagePath: "images/skill/javascript.png" },
+      { name: "Java", imagePath: "images/skill/java.png" },
+      { name: "Python", imagePath: "images/skill/python.png" },
+      { name: "C#", imagePath: "images/skill/cs.png" },
+      { name: "SQL", imagePath: "images/skill/sql.png" },
       { name: "Assembly Language" },
-      { name: "C", imagePath: "images/skills/C.png" },
-      { name: "R", imagePath: "images/skills/R.png" }
+      { name: "C", imagePath: "images/skill/c.png" },
+      { name: "R", imagePath: "images/skill/r.png" }
     ]
   },
   {
     category: "Frontend Development",
     items: [
-      { name: "React", imagePath: "images/skills/React.png" },
-      { name: "Next.js", imagePath: "images/skills/NextJS.png" },
-      { name: "HTML5", imagePath: "images/skills/HTML5.png" },
-      { name: "CSS3", imagePath: "images/skills/CSS3.png" },
-      { name: "Material-UI", imagePath: "images/skills/MaterialUI.png" },
-      { name: "Tailwind CSS", imagePath: "images/skills/TailwindCSS.png" }
+      { name: "React", imagePath: "images/skill/react.png" },
+      { name: "Next.js", imagePath: "images/skill/nextjs.png" },
+      { name: "HTML5", imagePath: "images/skill/html5.png" },
+      { name: "CSS3", imagePath: "images/skill/css3.png" },
+      { name: "Material-UI", imagePath: "images/skill/materialui.png" },
+      { name: "Tailwind CSS", imagePath: "images/skill/tailwindcss.png" }
     ]
   },
   {
     category: "Backend Development",
     items: [
-      { name: "Node.js", imagePath: "images/skills/NodeJS.png" },
-      { name: "PHP", imagePath: "images/skills/PHP.png" }
+      { name: "Node.js", imagePath: "images/skill/nodejs.png" },
+      { name: "PHP", imagePath: "images/skill/php.png" }
     ]
   },
   {
     category: "Database & Cloud",
     items: [
-      { name: "MongoDB", imagePath: "images/skills/MongoDB.png" },
-      { name: "MySQL", imagePath: "images/skills/MySQL.png" },
-      { name: "SQLite", imagePath: "images/skills/SQLite.png" },
-      { name: "Cloudflare", imagePath: "images/skills/Cloudflare.png" },
-      { name: "Azure", imagePath: "images/skills/Azure.png" },
-      { name: "Vercel", imagePath: "images/skills/Vercel.png" }
+      { name: "MongoDB", imagePath: "images/skill/mongodb.png" },
+      { name: "MySQL", imagePath: "images/skill/mysql.png" },
+      { name: "SQLite", imagePath: "images/skill/sqlite.png" },
+      { name: "Cloudflare", imagePath: "images/skill/cloudflare.png" },
+      { name: "Azure", imagePath: "images/skill/azure.png" },
+      { name: "Vercel", imagePath: "images/skill/vercel.png" }
     ]
   },
   {
     category: "Tools & Methods",
     items: [
-      { name: "Git", imagePath: "images/skills/Git.png" },
+      { name: "Git", imagePath: "images/skill/git.png" },
       { name: "Agile" },
-      { name: "GitHub", imagePath: "images/skills/GitHub.png" },
-      { name: "Jest", imagePath: "images/skills/Jest.png" },
+      { name: "GitHub", imagePath: "images/skill/github.png" },
+      { name: "Jest", imagePath: "images/skill/jest.png" },
       { name: "Test-Driven Development" }
     ]
   },
