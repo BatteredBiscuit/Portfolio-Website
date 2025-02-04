@@ -24,7 +24,7 @@ export default function Experience() {
         <Container maxWidth="lg" sx={{ mt: isMobile ? 4 : 8, mb: isMobile ? 4 : 8 }}>
           <Paper elevation={3} sx={{ p: isMobile ? 2 : 4 }}>
             <Typography variant="h4" gutterBottom sx={{ fontSize: isMobile ? '1.8rem' : '2.125rem' }}>
-              Professional Experience
+              Work Experience
             </Typography>
             
             <Timeline 
