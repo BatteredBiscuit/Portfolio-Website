@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Box, Container, Typography, Paper, Grid, Avatar, Chip, Stack, useMediaQuery } from '@mui/material';
 import Navbar from '@/components/Navbar';
 import { useTheme } from '@mui/material/styles';
@@ -51,11 +52,14 @@ export default function About() {
                         color="primary"
                         variant="outlined"
                         icon={skill.imagePath ? 
-                          <img 
-                            src={skill.imagePath} 
-                            alt="" 
-                            style={{ width: 20, height: 20, marginLeft: 7 }}
-                          /> : undefined}
+                          <Box sx={{ width: 20, height: 20, marginLeft: '7px', position: 'relative' }}>
+                            <Image
+                              src={`/${skill.imagePath}`}
+                              alt=""
+                              fill
+                              style={{ objectFit: 'contain' }}
+                            />
+                          </Box> : undefined}
                       />
                     ))}
                   </Stack>
