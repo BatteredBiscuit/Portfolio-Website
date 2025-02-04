@@ -23,7 +23,7 @@ export default function Home() {
               wordWrap: 'break-word'
             }}
           >
-            Welcome to My Portfolio
+            Welcome to My Portfolio!
           </Typography>
           <Typography 
             variant="h5" 
