@@ -10,10 +10,10 @@ export const skills: Skill[] = [
   {
     category: "Programming Languages",
     items: [
-      { name: "TypeScript", imagePath: "/images/skills/TypeScript.png" },
-      { name: "JavaScript", imagePath: "/images/skills/JavaScript.png" },
-      { name: "Java", imagePath: "/images/skills/Java.png" },
-      { name: "Python", imagePath: "/images/skills/Python.png" },
+      { name: "TypeScript", imagePath: "images/skills/TypeScript.png" },
+      { name: "JavaScript", imagePath: "images/skills/JavaScript.png" },
+      { name: "Java", imagePath: "images/skills/Java.png" },
+      { name: "Python", imagePath: "images/skills/Python.png" },
       { name: "C#", imagePath: "/images/skills/CS.png" },
       { name: "SQL", imagePath: "/images/skills/SQL.png" },
       { name: "Assembly Language" },
