@@ -89,7 +89,14 @@ export default function Navbar() {
             {menuItems.map((item) => (
               <Button
                 key={item.href}
-                sx={{ color: '#fff' }}
+                sx={{ 
+                  color: '#fff',
+                  '@media (hover: hover)': {
+                    '&:hover': {
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                    }
+                  }
+                }}
                 component={Link}
                 href={item.href}
               >

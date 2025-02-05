@@ -32,6 +32,13 @@ export default function Footer() {
               href="https://github.com/BatteredBiscuit" 
               target="_blank"
               aria-label="GitHub"
+              sx={{
+                '@media (hover: hover)': {
+                  '&:hover': {
+                    color: 'primary.main',
+                  }
+                }
+              }}
             >
               <GitHubIcon />
             </IconButton>

@@ -64,10 +64,12 @@ export default function Experience() {
                     elevation={2} 
                     sx={{ 
                       p: isMobile ? 2 : 3,
-                      transition: 'transform 0.2s',
                       background: theme.palette.background.paper,
-                      '&:hover': {
-                        transform: 'translateY(-4px)',
+                      '@media (hover: hover)': {
+                        transition: 'transform 0.2s',
+                        '&:hover': {
+                          transform: 'translateY(-4px)',
+                        }
                       }
                     }}
                   >

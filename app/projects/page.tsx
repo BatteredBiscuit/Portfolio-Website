@@ -38,11 +38,14 @@ export default function Projects() {
                 height: '100%', 
                 display: 'flex', 
                 flexDirection: 'column',
-                transition: 'transform 0.2s, box-shadow 0.2s',
                 backgroundColor: theme.palette.background.paper,
-                '&:hover': {
-                  transform: 'translateY(-4px)',
-                  boxShadow: 6,
+                // Only apply hover effects on non-touch devices
+                '@media (hover: hover)': {
+                  transition: 'transform 0.2s, box-shadow 0.2s',
+                  '&:hover': {
+                    transform: 'translateY(-4px)',
+                    boxShadow: 6,
+                  }
                 }
               }}>
                 <CardContent sx={{ 
