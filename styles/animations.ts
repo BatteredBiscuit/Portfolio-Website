@@ -1,17 +1,17 @@
 import { SxProps, Theme } from '@mui/material';
 
 export const hoverLift: SxProps<Theme> = {
-  '@media (hover: none) and (pointer: coarse)': {
-    transition: 'none',
-    transform: 'none',
+  '@media (pointer: coarse)': {
+    transform: 'none !important',
+    transition: 'none !important',
     '&:hover': {
-      transform: 'none'
+      transform: 'none !important'
     },
     '&:active': {
-      transform: 'none'
+      transform: 'none !important'
     }
   },
-  '@media (hover: hover) and (pointer: fine)': {
+  '@media (pointer: fine)': {
     transition: 'transform 0.2s ease-in-out',
     '&:hover': {
       transform: 'translateY(-4px)'
