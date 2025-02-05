@@ -45,9 +45,7 @@ export default function Navbar() {
   };
 
   return (
-    <AppBar position="static" color="primary" sx={{ 
-      transition: 'background-color 0.3s ease-in-out'
-    }}>
+    <AppBar position="static" color="primary">
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: '#fff' }}>
           Hayden O'Neill Portfolio
@@ -115,10 +113,9 @@ export default function Navbar() {
                 key={item.href}
                 sx={{ 
                   color: '#fff',
-                  '&:hover': {
-                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                    '@media (hover: none)': {
-                      backgroundColor: 'transparent'
+                  '@media (hover: hover) and (pointer: fine)': {
+                    '&:hover': {
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)'
                     }
                   }
                 }}
