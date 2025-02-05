@@ -34,7 +34,7 @@ export default function About() {
                 About Me
               </Typography>
               <Typography paragraph>
-                [Your compelling introduction here]
+                Motivated final-year Computer Science student at Northumbria University, on course to graduate with a first-class degree. Jointly placed third in the second year with an 82% average. Passionate about technology and coding, with strong expertise in many different aspects of computer science such as software engineering, web technology, and systems analysis. Proficient in communication and teamwork, demonstrated through experience in retail, hospitality, and sports roles, including leadership roles within sports and sports officiating. Recognised for problem-solving abilities and a high level of mathematical proficiency, seeking a graduate role to apply technical expertise and passion for innovation in a fast-moving, tech-driven environment.
               </Typography>
               <Typography variant="h5" gutterBottom sx={{ mt: 4 }}>
                 Skills
