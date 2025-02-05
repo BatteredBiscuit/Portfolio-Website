@@ -1,11 +1,15 @@
 import { AppBar, Toolbar, Typography, Button, IconButton, Menu, MenuItem, Box, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useThemeContext } from '@/contexts/ThemeContext';
 
 export default function Navbar() {
   const theme = useTheme();
+  const { isDarkMode, toggleTheme } = useThemeContext();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -32,6 +36,14 @@ export default function Navbar() {
           Hayden O'Neill Portfolio
         </Typography>
         
+        <IconButton
+          sx={{ mr: 1 }}
+          onClick={toggleTheme}
+          color="inherit"
+        >
+          {isDarkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+        </IconButton>
+
         {isMobile ? (
           <>
             <IconButton

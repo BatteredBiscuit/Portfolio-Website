@@ -8,6 +8,7 @@ import { projects } from '@/data/projects';
 export default function Projects() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isDarkMode = theme.palette.mode === 'dark';
 
   return (
     <Box sx={{ 
@@ -38,6 +39,7 @@ export default function Projects() {
                 display: 'flex', 
                 flexDirection: 'column',
                 transition: 'transform 0.2s, box-shadow 0.2s',
+                backgroundColor: theme.palette.background.paper,
                 '&:hover': {
                   transform: 'translateY(-4px)',
                   boxShadow: 6,
@@ -57,12 +59,26 @@ export default function Projects() {
                   >
                     {project.title}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                  <Typography 
+                    variant="body2" 
+                    sx={{ 
+                      mb: 2,
+                      color: theme.palette.text.secondary
+                    }}
+                  >
                     {project.description}
                   </Typography>
                   <Stack direction="row" spacing={1} sx={{ mb: 2 }} flexWrap="wrap" gap={1}>
                     {project.technologies.map((tech, techIndex) => (
-                      <Chip key={techIndex} label={tech} size="small" />
+                      <Chip 
+                        key={techIndex} 
+                        label={tech} 
+                        size="small"
+                        sx={{
+                          backgroundColor: isDarkMode ? 'rgba(96, 165, 250, 0.1)' : 'rgba(37, 99, 235, 0.1)',
+                          color: theme.palette.primary.main
+                        }}
+                      />
                     ))}
                   </Stack>
                 </CardContent>
@@ -70,9 +86,21 @@ export default function Projects() {
                   p: isMobile ? 2 : 2.5,
                   borderTop: `1px solid ${theme.palette.divider}`
                 }}>
-                  <Button size="small" href={project.githubUrl}>GitHub</Button>
+                  <Button 
+                    size="small" 
+                    href={project.githubUrl}
+                    sx={{ color: theme.palette.primary.main }}
+                  >
+                    GitHub
+                  </Button>
                   {project.demoUrl && (
-                    <Button size="small" href={project.demoUrl}>Live Demo</Button>
+                    <Button 
+                      size="small" 
+                      href={project.demoUrl}
+                      sx={{ color: theme.palette.primary.main }}
+                    >
+                      Live Demo
+                    </Button>
                   )}
                 </CardActions>
               </Card>

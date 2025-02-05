@@ -11,6 +11,7 @@ import Image from 'next/image';
 export default function About() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isDarkMode = theme.palette.mode === 'dark';
   const [tabValue, setTabValue] = useState(0);
 
   const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -25,7 +26,9 @@ export default function About() {
           <Grid item xs={12} md={4}>
             <Paper elevation={2} sx={{ 
               p: 3, 
-              background: 'linear-gradient(to right bottom, #ffffff, #f8f9fa)',
+              background: isDarkMode
+                ? 'linear-gradient(to right bottom, #1e293b, #0f172a)'
+                : 'linear-gradient(to right bottom, #ffffff, #f8f9fa)',
               borderRadius: 3,
               textAlign: 'center',
               position: 'sticky',
@@ -37,18 +40,18 @@ export default function About() {
                   height: isMobile ? 200 : 250,
                   margin: 'auto',
                   mb: 2,
-                  border: `4px solid ${theme.palette.primary.light}`
+                  border: `4px solid ${theme.palette.primary.main}`
                 }}
                 alt="Hayden O'Neill"
                 src="/images/myself.png"
               />
-              <Typography variant="h5" gutterBottom color="primary" fontWeight={600}>
+              <Typography variant="h5" gutterBottom sx={{ color: theme.palette.primary.main }} fontWeight={600}>
                 Hayden O'Neill
               </Typography>
               <Typography variant="subtitle1" color="text.secondary">
                 Software Developer
               </Typography>
-              <Typography paragraph sx={{ mt: 2, textAlign: 'left' }}>
+              <Typography paragraph sx={{ mt: 2, textAlign: 'left', color: theme.palette.text.primary }}>
               Motivated final-year Computer Science student at Northumbria University, on course to graduate with a first-class degree. Jointly placed third in the second year with an 82% average. Passionate about technology and coding, with strong expertise in many different aspects of computer science. Proficient in communication and teamwork, as well as being recognised for problem-solving abilities and a high level of mathematical proficiency, seeking a graduate role to apply technical expertise and passion for innovation in a fast-moving, tech-driven environment.
               </Typography>
             </Paper>
@@ -56,14 +59,25 @@ export default function About() {
           
           <Grid item xs={12} md={8}>
             <Paper elevation={2} sx={{ 
-              background: 'linear-gradient(to right bottom, #ffffff, #f8f9fa)',
+              background: isDarkMode
+                ? 'linear-gradient(to right bottom, #1e293b, #0f172a)'
+                : 'linear-gradient(to right bottom, #ffffff, #f8f9fa)',
               borderRadius: 3
             }}>
               <Tabs
                 value={tabValue}
                 onChange={handleTabChange}
                 centered
-                sx={{ borderBottom: 1, borderColor: 'divider' }}
+                sx={{ 
+                  borderBottom: 1, 
+                  borderColor: 'divider',
+                  '& .MuiTab-root': {
+                    color: theme.palette.text.secondary,
+                    '&.Mui-selected': {
+                      color: theme.palette.primary.main,
+                    },
+                  },
+                }}
               >
                 <Tab label="Education" />
                 <Tab label="Skills" />
@@ -100,7 +114,10 @@ export default function About() {
                         <Grid container spacing={2}>
                           {year.modules.map((module, moduleIndex) => (
                             <Grid item xs={12} sm={6} key={moduleIndex}>
-                              <Paper elevation={2} sx={{ p: 2 }}>
+                              <Paper elevation={2} sx={{ 
+                                p: 2,
+                                background: theme.palette.background.paper,
+                              }}>
                                 <Typography variant="subtitle1" gutterBottom>
                                   {module.name}
                                   {module.grade && (
@@ -128,7 +145,7 @@ export default function About() {
                   <Box>
                     {skills.map((skillCategory, index) => (
                       <Box key={index} sx={{ mb: 3 }}>
-                        <Typography variant="h6" gutterBottom color="text.primary">
+                        <Typography variant="h6" gutterBottom sx={{ color: theme.palette.text.primary }}>
                           {skillCategory.category}
                         </Typography>
                         <Stack direction="row" spacing={1} flexWrap="wrap" gap={1}>
@@ -138,7 +155,7 @@ export default function About() {
                               label={skill.name}
                               sx={{
                                 background: theme.palette.primary.main,
-                                color: 'white',
+                                color: '#ffffff',
                                 '&:hover': {
                                   background: theme.palette.primary.dark,
                                 }

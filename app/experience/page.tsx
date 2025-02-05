@@ -9,6 +9,7 @@ import { experiences } from '@/data/experiences';
 export default function Experience() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isDarkMode = theme.palette.mode === 'dark';
 
   return (
     <Box sx={{ 
@@ -23,7 +24,9 @@ export default function Experience() {
           elevation={2} 
           sx={{ 
             p: isMobile ? 3 : 5,
-            background: 'linear-gradient(to right bottom, #ffffff, #f8f9fa)',
+            background: isDarkMode
+              ? 'linear-gradient(to right bottom, #1e293b, #0f172a)'
+              : 'linear-gradient(to right bottom, #ffffff, #f8f9fa)',
             borderRadius: 3
           }}
         >
@@ -62,21 +65,22 @@ export default function Experience() {
                     sx={{ 
                       p: isMobile ? 2 : 3,
                       transition: 'transform 0.2s',
+                      background: theme.palette.background.paper,
                       '&:hover': {
                         transform: 'translateY(-4px)',
                       }
                     }}
                   >
-                    <Typography variant="h6" color="primary" gutterBottom fontWeight={600}>
+                    <Typography variant="h6" sx={{ color: theme.palette.primary.main }} gutterBottom fontWeight={600}>
                       {experience.title}
                     </Typography>
-                    <Typography variant="subtitle1" gutterBottom>
+                    <Typography variant="subtitle1" sx={{ color: theme.palette.text.primary }} gutterBottom>
                       {experience.company}
                     </Typography>
                     <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
                       {experience.period}
                     </Typography>
-                    <Typography variant="body1" sx={{ lineHeight: 1.7 }}>
+                    <Typography variant="body1" sx={{ lineHeight: 1.7, color: theme.palette.text.primary }}>
                       {experience.description}
                     </Typography>
                   </Paper>
