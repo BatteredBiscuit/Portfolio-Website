@@ -4,7 +4,6 @@ import { Box, Container, Typography, Paper, useMediaQuery, Grid } from '@mui/mat
 import Navbar from '@/components/Navbar';
 import { useTheme } from '@mui/material/styles';
 import FadeIn from '@/components/animations/FadeIn';
-import { hoverLift } from '@/styles/animations';
 
 export default function Home() {
   const theme = useTheme();
@@ -70,7 +69,7 @@ export default function Home() {
           {['About Me', 'Technical Overview'].map((title, index) => (
             <Grid item xs={12} md={6} key={index}>
               <FadeIn delay={0.1 * (index + 1)}>
-                <Box sx={{ ...hoverLift }}>
+                <Box>
                   <Paper 
                     elevation={2} 
                     sx={{ 

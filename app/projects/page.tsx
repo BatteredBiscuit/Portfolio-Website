@@ -4,7 +4,6 @@ import { Box, Container, Typography, Grid, Card, CardContent, CardActions, Butto
 import Navbar from '@/components/Navbar';
 import { useTheme } from '@mui/material/styles';
 import { projects } from '@/data/projects';
-import { hoverLift } from '@/styles/animations';
 import FadeIn from '@/components/animations/FadeIn';
 
 export default function Projects() {
@@ -39,7 +38,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
               <FadeIn delay={0.1 * index}>
-                <Box sx={{ ...hoverLift }}>
+                <Box>
                   <Card sx={{ 
                     height: '100%', 
                     display: 'flex', 

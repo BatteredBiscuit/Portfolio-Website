@@ -111,6 +111,7 @@ export default function Navbar() {
             {menuItems.map((item) => (
               <Button
                 key={item.href}
+                variant="hoverEnabled"
                 sx={{ 
                   color: '#fff',
                   '@media (hover: hover) and (pointer: fine)': {

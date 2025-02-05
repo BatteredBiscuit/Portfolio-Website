@@ -7,7 +7,6 @@ import { skills } from '@/data/skills';
 import { modules, degreeInfo, secondaryEducation, certificates } from '@/data/modules';
 import { useState } from 'react';
 import Image from 'next/image';
-import { hoverLift } from '@/styles/animations';
 import FadeIn from '@/components/animations/FadeIn';
 
 export default function About() {
@@ -140,8 +139,8 @@ export default function About() {
                             <Grid container spacing={2}>
                               {year.modules.map((module, moduleIndex) => (
                                 <Grid item xs={12} sm={6} key={moduleIndex}>
-                                  <Box sx={{ ...hoverLift }}>
-                                    <Paper elevation={2} sx={{ 
+                                  <Box>
+                                    <Paper elevation={2} variant="hoverEnabled" sx={{ 
                                       p: 2,
                                       background: theme.palette.background.paper,
                                     }}>
@@ -174,8 +173,8 @@ export default function About() {
                       <Grid container spacing={2} sx={{ mb: 4 }}>
                         {certificates.map((cert, index) => (
                           <Grid item xs={12} sm={6} key={index}>
-                            <Box sx={{ ...hoverLift }}>
-                              <Paper elevation={2} sx={{ 
+                            <Box>
+                              <Paper elevation={2} variant="hoverEnabled" sx={{ 
                                 p: 2,
                                 background: theme.palette.background.paper,
                               }}>
@@ -224,8 +223,8 @@ export default function About() {
                           <Grid container spacing={2}>
                             {edu.qualifications.map((qual, qualIndex) => (
                               <Grid item xs={12} sm={6} key={qualIndex}>
-                                <Box sx={{ ...hoverLift }}>
-                                  <Paper elevation={2} sx={{ 
+                                <Box>
+                                  <Paper elevation={2} variant="hoverEnabled" sx={{ 
                                     p: 2,
                                     background: theme.palette.background.paper,
                                   }}>
@@ -258,6 +257,7 @@ export default function About() {
                           <Stack direction="row" spacing={1} flexWrap="wrap" gap={1}>
                             {skillCategory.items.map((skill, skillIndex) => (
                               <Chip
+                                variant="hoverEnabled"
                                 key={skillIndex}
                                 label={skill.name}
                                 sx={{

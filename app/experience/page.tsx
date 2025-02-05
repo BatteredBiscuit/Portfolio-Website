@@ -5,7 +5,6 @@ import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineC
 import Navbar from '@/components/Navbar';
 import { useTheme } from '@mui/material/styles';
 import { experiences } from '@/data/experiences';
-import { hoverLift } from '@/styles/animations';
 import FadeIn from '@/components/animations/FadeIn';
 
 export default function Experience() {
@@ -64,9 +63,10 @@ export default function Experience() {
                   </TimelineSeparator>
                   <TimelineContent>
                     <FadeIn delay={0.2 * index} direction="right">
-                      <Box sx={{ ...hoverLift }}>
+                      <Box>
                         <Paper 
                           elevation={2} 
+                          variant="hoverEnabled"
                           sx={{ 
                             p: isMobile ? 2 : 3,
                             background: theme.palette.background.paper,
