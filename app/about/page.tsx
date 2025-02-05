@@ -165,6 +165,9 @@ export default function About() {
                                 color: '#ffffff',
                                 '&:hover': {
                                   background: theme.palette.primary.dark,
+                                  '@media (hover: none)': {
+                                    background: theme.palette.primary.main
+                                  }
                                 }
                               }}
                               icon={skill.imagePath ? 
