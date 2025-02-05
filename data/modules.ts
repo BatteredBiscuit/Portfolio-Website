@@ -18,7 +18,7 @@ interface YearModules {
 
 export const degreeInfo: DegreeInfo = {
   classification: "First Class Honours",
-  overallPercentage: "75%",
+  overallPercentage: "N/A",
   status: 'predicted'
 };
 
