@@ -39,12 +39,12 @@ export default function Projects() {
                 display: 'flex', 
                 flexDirection: 'column',
                 backgroundColor: theme.palette.background.paper,
-                // Only apply hover effects on non-touch devices
-                '@media (hover: hover)': {
-                  transition: 'transform 0.2s, box-shadow 0.2s',
-                  '&:hover': {
-                    transform: 'translateY(-4px)',
-                    boxShadow: 6,
+                '&:hover': {
+                  transform: 'translateY(-4px)',
+                  boxShadow: 6,
+                  '@media (hover: none)': {
+                    transform: 'none',
+                    boxShadow: 1
                   }
                 }
               }}>

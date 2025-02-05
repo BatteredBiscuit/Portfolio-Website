@@ -33,9 +33,10 @@ export default function Footer() {
               target="_blank"
               aria-label="GitHub"
               sx={{
-                '@media (hover: hover)': {
-                  '&:hover': {
-                    color: 'primary.main',
+                '&:hover': {
+                  color: 'primary.main',
+                  '@media (hover: none)': {
+                    color: 'inherit'
                   }
                 }
               }}

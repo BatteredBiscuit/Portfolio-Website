@@ -65,10 +65,10 @@ export default function Experience() {
                     sx={{ 
                       p: isMobile ? 2 : 3,
                       background: theme.palette.background.paper,
-                      '@media (hover: hover)': {
-                        transition: 'transform 0.2s',
-                        '&:hover': {
-                          transform: 'translateY(-4px)',
+                      '&:hover': {
+                        transform: 'translateY(-4px)',
+                        '@media (hover: none)': {
+                          transform: 'none'
                         }
                       }
                     }}

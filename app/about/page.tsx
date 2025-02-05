@@ -117,10 +117,11 @@ export default function About() {
                               <Paper elevation={2} sx={{ 
                                 p: 2,
                                 background: theme.palette.background.paper,
-                                '@media (hover: hover)': {
-                                  transition: 'transform 0.2s',
-                                  '&:hover': {
-                                    transform: 'translateY(-4px)',
+                                transition: 'transform 0.2s',
+                                '&:hover': {
+                                  transform: 'translateY(-4px)',
+                                  '@media (hover: none)': {
+                                    transform: 'none'
                                   }
                                 }
                               }}>
