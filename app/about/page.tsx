@@ -161,12 +161,12 @@ export default function About() {
                               key={skillIndex}
                               label={skill.name}
                               sx={{
-                                background: theme.palette.primary.main,
+                                background: isDarkMode ? theme.palette.primary.main : theme.palette.primary.dark,
                                 color: '#ffffff',
                                 '&:hover': {
-                                  background: theme.palette.primary.dark,
+                                  background: isDarkMode ? theme.palette.primary.dark : theme.palette.primary.main,
                                   '@media (hover: none)': {
-                                    background: theme.palette.primary.main
+                                    background: isDarkMode ? theme.palette.primary.main : theme.palette.primary.dark
                                   }
                                 }
                               }}
