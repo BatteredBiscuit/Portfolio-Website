@@ -57,7 +57,9 @@ export const skills: Skill[] = [
       { name: "Agile" },
       { name: "GitHub", imagePath: "images/skill/github.png" },
       { name: "Jest", imagePath: "images/skill/jest.png" },
-      { name: "Test-Driven Development" }
+      { name: "Test-Driven Development" },
+      { name: "Google Workspace", imagePath: "images/skill/googleworkspace.png" },
+      { name: "Microsoft Office", imagePath: "images/skill/microsoftoffice.png" },
     ]
   },
   {

@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import ClientThemeProvider from '@/components/Providers/ClientThemeProvider';
+import Footer from '@/components/Footer';
 
 export const metadata = {
   title: {
@@ -22,7 +23,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ClientThemeProvider>
-          {children}
+          <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+            {children}
+            <Footer />
+          </div>
           <Analytics />
           <SpeedInsights />
         </ClientThemeProvider>
