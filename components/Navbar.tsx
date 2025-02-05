@@ -32,12 +32,12 @@ export default function Navbar() {
   return (
     <AppBar position="static" color="primary">
       <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: '#fff' }}>
           Hayden O'Neill Portfolio
         </Typography>
         
         <IconButton
-          sx={{ mr: 1 }}
+          sx={{ mr: 1, color: '#fff' }}
           onClick={toggleTheme}
           color="inherit"
         >
@@ -50,6 +50,7 @@ export default function Navbar() {
               size="large"
               edge="end"
               color="inherit"
+              sx={{ color: '#fff' }}
               aria-label="menu"
               onClick={handleMenu}
             >
@@ -76,6 +77,7 @@ export default function Navbar() {
                   onClick={handleClose}
                   component={Link}
                   href={item.href}
+                  sx={{ color: 'inherit' }}
                 >
                   {item.text}
                 </MenuItem>
@@ -87,7 +89,7 @@ export default function Navbar() {
             {menuItems.map((item) => (
               <Button
                 key={item.href}
-                color="inherit"
+                sx={{ color: '#fff' }}
                 component={Link}
                 href={item.href}
               >
