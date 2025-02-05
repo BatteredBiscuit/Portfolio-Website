@@ -161,6 +161,16 @@ const getTheme = (isDarkMode: boolean) => createTheme({
         },
       },
     },
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          backgroundColor: 'transparent',
+        },
+        html: {
+          backgroundColor: isDarkMode ? '#0f172a' : '#f8fafc',
+        }
+      }
+    },
   },
 });
 
