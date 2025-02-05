@@ -4,6 +4,7 @@ import { Box, Container, Typography, Paper, useMediaQuery, Grid } from '@mui/mat
 import Navbar from '@/components/Navbar';
 import { useTheme } from '@mui/material/styles';
 import FadeIn from '@/components/animations/FadeIn';
+import { hoverLift } from '@/styles/animations';
 
 export default function Home() {
   const theme = useTheme();
