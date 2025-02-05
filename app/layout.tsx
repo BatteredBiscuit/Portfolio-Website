@@ -12,7 +12,7 @@ interface RootLayoutProps {
 export const metadata = {
   title: {
     default: "Hayden O'Neill's Portfolio",
-    template: "%s | Hayden O'Neill"
+    template: "%s | Hayden O'Neill",
   },
   description: 'Portfolio website showcasing my work and experience',
   icons: {
@@ -26,9 +26,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body>
         <ClientThemeProvider>
           <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-            <PageTransition>
-              {children}
-            </PageTransition>
+            <PageTransition>{children}</PageTransition>
             <Footer />
           </div>
           <Analytics />

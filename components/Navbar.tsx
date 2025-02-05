@@ -9,7 +9,7 @@ import {
   Menu,
   MenuItem,
   Box,
-  useMediaQuery
+  useMediaQuery,
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -50,15 +50,15 @@ export default function Navbar() {
         <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: '#fff' }}>
           Hayden O'Neill Portfolio
         </Typography>
-        
+
         <IconButton
-          sx={{ 
-            mr: 1, 
+          sx={{
+            mr: 1,
             color: '#fff',
             transition: 'transform 0.2s ease-in-out',
             '&:hover': {
               transform: 'rotate(90deg)',
-            }
+            },
           }}
           onClick={toggleTheme}
           color="inherit"
@@ -94,13 +94,7 @@ export default function Navbar() {
               onClose={handleClose}
             >
               {menuItems.map((item) => (
-                <MenuItem 
-                  key={item.href}
-                  onClick={handleClose}
-                  component={Link}
-                  href={item.href}
-                  sx={{ color: 'inherit' }}
-                >
+                <MenuItem key={item.href} onClick={handleClose} component={Link} href={item.href} sx={{ color: 'inherit' }}>
                   {item.text}
                 </MenuItem>
               ))}
@@ -112,13 +106,13 @@ export default function Navbar() {
               <Button
                 key={item.href}
                 variant="hoverEnabled"
-                sx={{ 
+                sx={{
                   color: '#fff',
                   '@media (hover: hover) and (pointer: fine)': {
                     '&:hover': {
-                      backgroundColor: 'rgba(255, 255, 255, 0.1)'
-                    }
-                  }
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                    },
+                  },
                 }}
                 component={Link}
                 href={item.href}

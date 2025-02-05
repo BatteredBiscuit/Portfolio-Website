@@ -8,7 +8,7 @@ import { ThemeContextProvider, useThemeContext } from '@/contexts/ThemeContext';
 function ThemeWrapper({ children }: { children: React.ReactNode }) {
   const { isDarkMode } = useThemeContext();
   const theme = getTheme(isDarkMode);
-  
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -17,11 +17,7 @@ function ThemeWrapper({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function ClientThemeProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function ClientThemeProvider({ children }: { children: React.ReactNode }) {
   return (
     <ThemeContextProvider>
       <ThemeWrapper>{children}</ThemeWrapper>

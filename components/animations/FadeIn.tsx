@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useRef, ReactNode } from 'react';
 import { Box } from '@mui/material';
 
@@ -30,10 +32,14 @@ const FadeIn = ({ children, delay = 0, direction = 'up' }: FadeInProps) => {
   const getTransform = () => {
     const distance = '20px';
     switch (direction) {
-      case 'up': return `translateY(${distance})`;
-      case 'down': return `translateY(-${distance})`;
-      case 'left': return `translateX(${distance})`;
-      case 'right': return `translateX(-${distance})`;
+      case 'up':
+        return `translateY(${distance})`;
+      case 'down':
+        return `translateY(-${distance})`;
+      case 'left':
+        return `translateX(${distance})`;
+      case 'right':
+        return `translateX(-${distance})`;
     }
   };
 
@@ -48,7 +54,7 @@ const FadeIn = ({ children, delay = 0, direction = 'up' }: FadeInProps) => {
         '&.fade-in-visible': {
           opacity: 1,
           transform: 'translate(0)',
-        }
+        },
       }}
     >
       {children}

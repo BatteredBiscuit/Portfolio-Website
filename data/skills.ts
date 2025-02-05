@@ -18,8 +18,8 @@ export const skills: Skill[] = [
       { name: "SQL", imagePath: "images/skill/sql.png" },
       { name: "Assembly Language" },
       { name: "C", imagePath: "images/skill/c.png" },
-      { name: "R", imagePath: "images/skill/r.png" }
-    ]
+      { name: "R", imagePath: "images/skill/r.png" },
+    ],
   },
   {
     category: "Frontend Development",
@@ -29,15 +29,15 @@ export const skills: Skill[] = [
       { name: "HTML5", imagePath: "images/skill/html5.png" },
       { name: "CSS3", imagePath: "images/skill/css3.png" },
       { name: "Material-UI", imagePath: "images/skill/materialui.png" },
-      { name: "Tailwind CSS", imagePath: "images/skill/tailwindcss.png" }
-    ]
+      { name: "Tailwind CSS", imagePath: "images/skill/tailwindcss.png" },
+    ],
   },
   {
     category: "Backend Development",
     items: [
       { name: "Node.js", imagePath: "images/skill/nodejs.png" },
-      { name: "PHP", imagePath: "images/skill/php.png" }
-    ]
+      { name: "PHP", imagePath: "images/skill/php.png" },
+    ],
   },
   {
     category: "Database & Cloud",
@@ -47,8 +47,8 @@ export const skills: Skill[] = [
       { name: "SQLite", imagePath: "images/skill/sqlite.png" },
       { name: "Cloudflare", imagePath: "images/skill/cloudflare.png" },
       { name: "Azure", imagePath: "images/skill/azure.png" },
-      { name: "Vercel", imagePath: "images/skill/vercel.png" }
-    ]
+      { name: "Vercel", imagePath: "images/skill/vercel.png" },
+    ],
   },
   {
     category: "Tools & Methods",
@@ -60,7 +60,7 @@ export const skills: Skill[] = [
       { name: "Test-Driven Development" },
       { name: "Google Workspace", imagePath: "images/skill/googleworkspace.png" },
       { name: "Microsoft Office", imagePath: "images/skill/microsoftoffice.png" },
-    ]
+    ],
   },
   {
     category: "Soft Skills",
@@ -72,13 +72,11 @@ export const skills: Skill[] = [
       { name: "Solution-Oriented" },
       { name: "Flexible" },
       { name: "Approachable" },
-      { name: "Quick-Learner" }
-    ]
+      { name: "Quick-Learner" },
+    ],
   },
   {
     category: "Other",
-    items: [
-      { name: "Experienced Driver" }
-    ]
-  }
+    items: [{ name: "Experienced Driver" }],
+  },
 ];

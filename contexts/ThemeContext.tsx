@@ -30,11 +30,7 @@ export function ThemeContextProvider({ children }: ThemeProviderProps) {
     localStorage.setItem('theme', newTheme ? 'dark' : 'light');
   };
 
-  return (
-    <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>{children}</ThemeContext.Provider>;
 }
 
 export const useThemeContext = () => useContext(ThemeContext);
