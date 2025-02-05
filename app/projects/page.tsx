@@ -40,6 +40,7 @@ export default function Projects() {
               <FadeIn delay={0.1 * index}>
                 <Box>
                   <Card
+                    variant="hoverEnabled"
                     sx={{
                       height: '100%',
                       display: 'flex',
