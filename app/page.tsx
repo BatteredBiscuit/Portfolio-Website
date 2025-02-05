@@ -69,40 +69,42 @@ export default function Home() {
           {['About Me', 'Technical Overview'].map((title, index) => (
             <Grid item xs={12} md={6} key={index}>
               <FadeIn delay={0.1 * (index + 1)}>
-                <Paper 
-                  elevation={2} 
-                  sx={{ 
-                    p: isMobile ? 3 : 4,
-                    height: '100%',
-                    background: isDarkMode
-                      ? 'linear-gradient(to right bottom, #1e293b, #0f172a)'
-                      : 'linear-gradient(to right bottom, #ffffff, #f8f9fa)',
-                    borderRadius: 3
-                  }}
-                >
-                  <Typography variant="h5" gutterBottom sx={{ color: theme.palette.primary.main }} fontWeight={600}>
-                    {title}
-                  </Typography>
-                  {index === 0 ? (
-                    <>
-                      <Typography paragraph>
-                        Hi, I'm Hayden O’Neill, a final-year Computer Science student at Northumbria University, on track to graduate with a first-class degree. With a strong passion for technology and coding, I have developed expertise in software engineering, web development, and systems analysis, as well as many other aspects of the industry. My academic achievements reflect my dedication, having ranked jointly third in my second year with an 82% average.
-                      </Typography>
-                      <Typography paragraph>
-                        Beyond academics, I bring a well-rounded skill set from my experiences in retail, hospitality, and sports officiating. My roles as a basketball referee and table official in high-profile leagues have sharpened my ability to perform under pressure, communicate effectively, and adapt to dynamic environments.
-                      </Typography>
-                    </>
-                  ) : (
-                    <>
-                      <Typography paragraph>
-                        Technically, I have experience working with multiple programming languages, including Python, Java, C#, and JavaScript, along with proficiency in many computing aspects not limited to cloud computing, machine learning, and data security. I thrive in collaborative settings and enjoy solving complex problems with innovative solutions.
-                      </Typography>
-                      <Typography paragraph>
-                        I am eager to apply my technical expertise and problem-solving skills in a fast-moving, tech-driven environment. Whether it's software development, web technologies, or data analysis, or something else entirely, I am always looking for opportunities to grow and create impactful solutions.
-                      </Typography>
-                    </>
-                  )}
-                </Paper>
+                <Box sx={{ ...hoverLift }}>
+                  <Paper 
+                    elevation={2} 
+                    sx={{ 
+                      p: isMobile ? 3 : 4,
+                      height: '100%',
+                      background: isDarkMode
+                        ? 'linear-gradient(to right bottom, #1e293b, #0f172a)'
+                        : 'linear-gradient(to right bottom, #ffffff, #f8f9fa)',
+                      borderRadius: 3
+                    }}
+                  >
+                    <Typography variant="h5" gutterBottom sx={{ color: theme.palette.primary.main }} fontWeight={600}>
+                      {title}
+                    </Typography>
+                    {index === 0 ? (
+                      <>
+                        <Typography paragraph>
+                          Hi, I'm Hayden O’Neill, a final-year Computer Science student at Northumbria University, on track to graduate with a first-class degree. With a strong passion for technology and coding, I have developed expertise in software engineering, web development, and systems analysis, as well as many other aspects of the industry. My academic achievements reflect my dedication, having ranked jointly third in my second year with an 82% average.
+                        </Typography>
+                        <Typography paragraph>
+                          Beyond academics, I bring a well-rounded skill set from my experiences in retail, hospitality, and sports officiating. My roles as a basketball referee and table official in high-profile leagues have sharpened my ability to perform under pressure, communicate effectively, and adapt to dynamic environments.
+                        </Typography>
+                      </>
+                    ) : (
+                      <>
+                        <Typography paragraph>
+                          Technically, I have experience working with multiple programming languages, including Python, Java, C#, and JavaScript, along with proficiency in many computing aspects not limited to cloud computing, machine learning, and data security. I thrive in collaborative settings and enjoy solving complex problems with innovative solutions.
+                        </Typography>
+                        <Typography paragraph>
+                          I am eager to apply my technical expertise and problem-solving skills in a fast-moving, tech-driven environment. Whether it's software development, web technologies, or data analysis, or something else entirely, I am always looking for opportunities to grow and create impactful solutions.
+                        </Typography>
+                      </>
+                    )}
+                  </Paper>
+                </Box>
               </FadeIn>
             </Grid>
           ))}

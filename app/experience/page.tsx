@@ -64,27 +64,28 @@ export default function Experience() {
                   </TimelineSeparator>
                   <TimelineContent>
                     <FadeIn delay={0.2 * index} direction="right">
-                      <Paper 
-                        elevation={2} 
-                        sx={{ 
-                          p: isMobile ? 2 : 3,
-                          background: theme.palette.background.paper,
-                          ...hoverLift
-                        }}
-                      >
-                        <Typography variant="h6" sx={{ color: theme.palette.primary.main }} gutterBottom fontWeight={600}>
-                          {experience.title}
-                        </Typography>
-                        <Typography variant="subtitle1" sx={{ color: theme.palette.text.primary }} gutterBottom>
-                          {experience.company}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-                          {experience.period}
-                        </Typography>
-                        <Typography variant="body1" sx={{ lineHeight: 1.7, color: theme.palette.text.primary }}>
-                          {experience.description}
-                        </Typography>
-                      </Paper>
+                      <Box sx={{ ...hoverLift }}>
+                        <Paper 
+                          elevation={2} 
+                          sx={{ 
+                            p: isMobile ? 2 : 3,
+                            background: theme.palette.background.paper,
+                          }}
+                        >
+                          <Typography variant="h6" sx={{ color: theme.palette.primary.main }} gutterBottom fontWeight={600}>
+                            {experience.title}
+                          </Typography>
+                          <Typography variant="subtitle1" sx={{ color: theme.palette.text.primary }} gutterBottom>
+                            {experience.company}
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                            {experience.period}
+                          </Typography>
+                          <Typography variant="body1" sx={{ lineHeight: 1.7, color: theme.palette.text.primary }}>
+                            {experience.description}
+                          </Typography>
+                        </Paper>
+                      </Box>
                     </FadeIn>
                   </TimelineContent>
                 </TimelineItem>

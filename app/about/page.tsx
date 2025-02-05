@@ -140,26 +140,27 @@ export default function About() {
                             <Grid container spacing={2}>
                               {year.modules.map((module, moduleIndex) => (
                                 <Grid item xs={12} sm={6} key={moduleIndex}>
-                                  <Paper elevation={2} sx={{ 
-                                    p: 2,
-                                    background: theme.palette.background.paper,
-                                    ...hoverLift
-                                  }}>
-                                    <Typography variant="subtitle2">
-                                      {module.name}
-                                      {module.grade && (
-                                        <Chip
-                                          label={module.grade}
-                                          size="small"
-                                          color="primary"
-                                          sx={{ ml: 1 }}
-                                        />
-                                      )}
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary">
-                                      {module.description}
-                                    </Typography>
-                                  </Paper>
+                                  <Box sx={{ ...hoverLift }}>
+                                    <Paper elevation={2} sx={{ 
+                                      p: 2,
+                                      background: theme.palette.background.paper,
+                                    }}>
+                                      <Typography variant="subtitle2">
+                                        {module.name}
+                                        {module.grade && (
+                                          <Chip
+                                            label={module.grade}
+                                            size="small"
+                                            color="primary"
+                                            sx={{ ml: 1 }}
+                                          />
+                                        )}
+                                      </Typography>
+                                      <Typography variant="body2" color="text.secondary">
+                                        {module.description}
+                                      </Typography>
+                                    </Paper>
+                                  </Box>
                                 </Grid>
                               ))}
                             </Grid>
@@ -173,30 +174,31 @@ export default function About() {
                       <Grid container spacing={2} sx={{ mb: 4 }}>
                         {certificates.map((cert, index) => (
                           <Grid item xs={12} sm={6} key={index}>
-                            <Paper elevation={2} sx={{ 
-                              p: 2,
-                              background: theme.palette.background.paper,
-                              ...hoverLift
-                            }}>
-                              <Typography variant="subtitle1" gutterBottom>
-                                {cert.name}
-                              </Typography>
-                              <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                <Typography variant="body2" color="text.secondary">
-                                  {cert.issuer}
+                            <Box sx={{ ...hoverLift }}>
+                              <Paper elevation={2} sx={{ 
+                                p: 2,
+                                background: theme.palette.background.paper,
+                              }}>
+                                <Typography variant="subtitle1" gutterBottom>
+                                  {cert.name}
                                 </Typography>
-                                <Chip
-                                  label={cert.date}
-                                  size="small"
-                                  color="primary"
-                                />
-                              </Box>
-                              {cert.credential && (
-                                <Link href={cert.credential} target="_blank" sx={{ display: 'block', mt: 1 }}>
-                                  View Credential
-                                </Link>
-                              )}
-                            </Paper>
+                                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                  <Typography variant="body2" color="text.secondary">
+                                    {cert.issuer}
+                                  </Typography>
+                                  <Chip
+                                    label={cert.date}
+                                    size="small"
+                                    color="primary"
+                                  />
+                                </Box>
+                                {cert.credential && (
+                                  <Link href={cert.credential} target="_blank" sx={{ display: 'block', mt: 1 }}>
+                                    View Credential
+                                  </Link>
+                                )}
+                              </Paper>
+                            </Box>
                           </Grid>
                         ))}
                       </Grid>
@@ -222,21 +224,22 @@ export default function About() {
                           <Grid container spacing={2}>
                             {edu.qualifications.map((qual, qualIndex) => (
                               <Grid item xs={12} sm={6} key={qualIndex}>
-                                <Paper elevation={2} sx={{ 
-                                  p: 2,
-                                  background: theme.palette.background.paper,
-                                  ...hoverLift
-                                }}>
-                                  <Typography variant="subtitle2">
-                                    {qual.name}
-                                    <Chip
-                                      label={qual.grade}
-                                      size="small"
-                                      color="primary"
-                                      sx={{ ml: 1 }}
-                                    />
-                                  </Typography>
-                                </Paper>
+                                <Box sx={{ ...hoverLift }}>
+                                  <Paper elevation={2} sx={{ 
+                                    p: 2,
+                                    background: theme.palette.background.paper,
+                                  }}>
+                                    <Typography variant="subtitle2">
+                                      {qual.name}
+                                      <Chip
+                                        label={qual.grade}
+                                        size="small"
+                                        color="primary"
+                                        sx={{ ml: 1 }}
+                                      />
+                                    </Typography>
+                                  </Paper>
+                                </Box>
                               </Grid>
                             ))}
                           </Grid>
