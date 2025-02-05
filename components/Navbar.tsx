@@ -1,11 +1,33 @@
-import { AppBar, Toolbar, Typography, Button, IconButton, Menu, MenuItem, Box, useMediaQuery } from '@mui/material';
+import { useState } from 'react';
+import Link from 'next/link';
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  IconButton,
+  Menu,
+  MenuItem,
+  Box,
+  useMediaQuery
+} from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
-import Link from 'next/link';
-import { useState } from 'react';
 import { useThemeContext } from '@/contexts/ThemeContext';
+
+interface MenuItem {
+  text: string;
+  href: string;
+}
+
+const menuItems: MenuItem[] = [
+  { text: 'Home', href: '/' },
+  { text: 'About', href: '/about' },
+  { text: 'Experience', href: '/experience' },
+  { text: 'Projects', href: '/projects' },
+];
 
 export default function Navbar() {
   const theme = useTheme();
@@ -22,22 +44,24 @@ export default function Navbar() {
     setAnchorEl(null);
   };
 
-  const menuItems = [
-    { text: 'Home', href: '/' },
-    { text: 'About', href: '/about' },
-    { text: 'Experience', href: '/experience' },
-    { text: 'Projects', href: '/projects' },
-  ];
-
   return (
-    <AppBar position="static" color="primary">
+    <AppBar position="static" color="primary" sx={{ 
+      transition: 'background-color 0.3s ease-in-out'
+    }}>
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: '#fff' }}>
           Hayden O'Neill Portfolio
         </Typography>
         
         <IconButton
-          sx={{ mr: 1, color: '#fff' }}
+          sx={{ 
+            mr: 1, 
+            color: '#fff',
+            transition: 'transform 0.2s ease-in-out',
+            '&:hover': {
+              transform: 'rotate(90deg)',
+            }
+          }}
           onClick={toggleTheme}
           color="inherit"
         >

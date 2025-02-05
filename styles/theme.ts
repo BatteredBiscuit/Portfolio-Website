@@ -1,6 +1,6 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme, Theme } from '@mui/material/styles';
 
-const getTheme = (isDarkMode: boolean) => createTheme({
+const getTheme = (isDarkMode: boolean): Theme => createTheme({
   palette: {
     mode: isDarkMode ? 'dark' : 'light',
     primary: {
@@ -64,6 +64,13 @@ const getTheme = (isDarkMode: boolean) => createTheme({
           boxShadow: isDarkMode 
             ? '0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3)'
             : '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05)',
+          transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
+          '&:hover': {
+            transform: 'translateY(-2px)',
+            boxShadow: isDarkMode 
+              ? '0 8px 12px -1px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4)'
+              : '0 8px 12px -1px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.1)',
+          },
         },
       },
     },
@@ -73,8 +80,13 @@ const getTheme = (isDarkMode: boolean) => createTheme({
           textTransform: 'none',
           borderRadius: 8,
           fontWeight: 500,
+          padding: '6px 16px',
           '&.MuiButton-containedPrimary': {
             color: '#ffffff',
+          },
+          transition: 'all 0.2s ease-in-out',
+          '&:hover': {
+            transform: 'translateY(-1px)',
           },
         },
       },
@@ -83,6 +95,10 @@ const getTheme = (isDarkMode: boolean) => createTheme({
       styleOverrides: {
         root: {
           borderRadius: 8,
+          transition: 'all 0.2s ease-in-out',
+          '&:hover': {
+            transform: 'translateY(-1px)',
+          },
         },
       },
     },
@@ -163,7 +179,11 @@ const getTheme = (isDarkMode: boolean) => createTheme({
     },
     MuiCssBaseline: {
       styleOverrides: {
+        '*': {
+          transition: 'all 0.2s ease-in-out',
+        },
         body: {
+          transition: 'background-color 0.2s ease-in-out',
           backgroundColor: 'transparent',
         },
         html: {

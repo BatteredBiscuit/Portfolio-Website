@@ -1,6 +1,8 @@
 interface DegreeInfo {
+  university: string;
   classification: string;
   overallPercentage: string;
+  period: string;
   status: 'predicted' | 'final';
 }
 
@@ -16,9 +18,27 @@ interface YearModules {
   average?: string;
 }
 
+export interface Certificate {
+  name: string;
+  issuer: string;
+  date: string;
+  credential?: string;
+}
+
+export interface Education {
+  institution: string;
+  period: string;
+  qualifications: Array<{
+    name: string;
+    grade: string;
+  }>;
+}
+
 export const degreeInfo: DegreeInfo = {
+  university: "Northumbria University",
   classification: "First Class Honours",
-  overallPercentage: "N/A",
+  overallPercentage: "82.5%",
+  period: "2022-2025",
   status: 'predicted'
 };
 
@@ -124,6 +144,33 @@ export const modules: YearModules[] = [
             description: "Individual final year research and development project.",
             grade: "In Progress"
           }
+    ]
+  }
+];
+
+export const certificates: Certificate[] = [
+  {
+    name: "AZ-900: Microsoft Azure Fundamentals",
+    issuer: "Microsoft",
+    date: "In Progress",
+  },
+];
+
+export const secondaryEducation: Education[] = [
+  {
+    institution: "Whitburn Church of England Academy Sixth Form",
+    period: "2020-2022",
+    qualifications: [
+      { name: "Computer Science", grade: "A" },
+      { name: "Geography", grade: "B" },
+      { name: "Maths", grade: "C" },
+    ]
+  },
+  {
+    institution: "Whitburn Church of England Academy",
+    period: "2015-2020",
+    qualifications: [
+      { name: "GCSEs", grade: "Grades 6-8" },
     ]
   }
 ];

@@ -1,7 +1,13 @@
+import { ReactNode } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import ClientThemeProvider from '@/components/Providers/ClientThemeProvider';
 import Footer from '@/components/Footer';
+import PageTransition from '@/components/PageTransition';
+
+interface RootLayoutProps {
+  children: ReactNode;
+}
 
 export const metadata = {
   title: {
@@ -14,17 +20,15 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body>
         <ClientThemeProvider>
           <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-            {children}
+            <PageTransition>
+              {children}
+            </PageTransition>
             <Footer />
           </div>
           <Analytics />
