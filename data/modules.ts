@@ -127,7 +127,7 @@ export const modules: YearModules[] = [
       {
         name: "Data Analytics",
         description: "Statistical analysis and data visualization techniques.",
-        grade: "In Progress",
+        grade: "55%",
       },
       {
         name: "Cloud Computing",
