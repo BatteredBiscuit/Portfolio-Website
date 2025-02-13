@@ -15,7 +15,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/BatteredBiscuit/portfolio-website",
   },
   {
-    title: "Cardex",
+    title: "Cardex - cardex-app.com",
     description:
       "An website to manage your trading card collection.",
     technologies: ["Next.js", "TypeScript", "Material-UI", "Vercel", "Git", "GitHub"]
