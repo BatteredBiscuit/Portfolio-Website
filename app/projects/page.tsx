@@ -69,7 +69,7 @@ export default function Projects() {
                         ))}
                       </Stack>
                     </CardContent>
-                      {project.githubUrl || project.demoUrl && (
+                    {(project.githubUrl || project.demoUrl) && (
                       <CardActions sx={{ p: isMobile ? 2 : 2.5, borderTop: `1px solid ${theme.palette.divider}` }}>
                         {project.githubUrl && (
                         <Button size="small" href={project.githubUrl} sx={{ color: theme.palette.primary.main }}>
