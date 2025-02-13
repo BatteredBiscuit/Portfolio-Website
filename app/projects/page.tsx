@@ -69,18 +69,20 @@ export default function Projects() {
                         ))}
                       </Stack>
                     </CardContent>
-                    <CardActions sx={{ p: isMobile ? 2 : 2.5, borderTop: `1px solid ${theme.palette.divider}` }}>
-                      {project.githubUrl && (
-                      <Button size="small" href={project.githubUrl} sx={{ color: theme.palette.primary.main }}>
-                        GitHub
-                      </Button>
-                      )}
-                      {project.demoUrl && (
-                        <Button size="small" href={project.demoUrl} sx={{ color: theme.palette.primary.main }}>
-                          Live Demo
+                      {project.githubUrl && project.demoUrl && (
+                      <CardActions sx={{ p: isMobile ? 2 : 2.5, borderTop: `1px solid ${theme.palette.divider}` }}>
+                        {project.githubUrl && (
+                        <Button size="small" href={project.githubUrl} sx={{ color: theme.palette.primary.main }}>
+                          GitHub
                         </Button>
-                      )}
-                    </CardActions>
+                        )}
+                        {project.demoUrl && (
+                          <Button size="small" href={project.demoUrl} sx={{ color: theme.palette.primary.main }}>
+                            Live Demo
+                          </Button>
+                        )}
+                      </CardActions>
+                    )}
                   </Card>
                 </Box>
               </FadeIn>
