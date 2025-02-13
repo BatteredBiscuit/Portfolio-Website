@@ -14,4 +14,11 @@ export const projects: Project[] = [
     technologies: ["Next.js", "TypeScript", "Material-UI", "Vercel", "Git", "GitHub"],
     githubUrl: "https://github.com/BatteredBiscuit/portfolio-website",
   },
+  {
+    title: "Cardex",
+    description:
+      "An website to manage your trading card collection.",
+    technologies: ["Next.js", "TypeScript", "Material-UI", "Vercel", "Git", "GitHub"],
+    githubUrl: "https://github.com/BatteredBiscuit/portfolio-website",
+  },
 ];
