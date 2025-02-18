@@ -1,21 +1,14 @@
-import { useState } from 'react';
 import Link from 'next/link';
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-  IconButton,
-  Menu,
-  MenuItem,
-  Box,
-  useMediaQuery,
-} from '@mui/material';
-import { useTheme } from '@mui/material/styles';
-import MenuIcon from '@mui/icons-material/Menu';
+import { useState } from 'react';
+
+import { useThemeContext } from '@/contexts/ThemeContext';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
-import { useThemeContext } from '@/contexts/ThemeContext';
+import MenuIcon from '@mui/icons-material/Menu';
+import {
+    AppBar, Box, Button, IconButton, Menu, MenuItem, Toolbar, Typography, useMediaQuery
+} from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 interface MenuItem {
   text: string;
@@ -23,16 +16,16 @@ interface MenuItem {
 }
 
 const menuItems: MenuItem[] = [
-  { text: 'Home', href: '/' },
-  { text: 'About', href: '/about' },
-  { text: 'Experience', href: '/experience' },
-  { text: 'Projects', href: '/projects' },
+  { text: "Home", href: "/" },
+  { text: "About", href: "/about" },
+  { text: "Experience", href: "/experience" },
+  { text: "Projects", href: "/projects" },
 ];
 
 export default function Navbar() {
   const theme = useTheme();
   const { isDarkMode, toggleTheme } = useThemeContext();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -47,17 +40,21 @@ export default function Navbar() {
   return (
     <AppBar position="static" color="primary">
       <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: '#fff' }}>
+        <Typography
+          variant="h6"
+          component="div"
+          sx={{ flexGrow: 1, color: "#fff" }}
+        >
           Hayden O'Neill Portfolio
         </Typography>
 
         <IconButton
           sx={{
             mr: 1,
-            color: '#fff',
-            transition: 'transform 0.2s ease-in-out',
-            '&:hover': {
-              transform: 'rotate(90deg)',
+            color: "#fff",
+            transition: "transform 0.2s ease-in-out",
+            "&:hover": {
+              transform: "rotate(90deg)",
             },
           }}
           onClick={toggleTheme}
@@ -72,7 +69,7 @@ export default function Navbar() {
               size="large"
               edge="end"
               color="inherit"
-              sx={{ color: '#fff' }}
+              sx={{ color: "#fff" }}
               aria-label="menu"
               onClick={handleMenu}
             >
@@ -82,35 +79,41 @@ export default function Navbar() {
               id="menu-appbar"
               anchorEl={anchorEl}
               anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
+                vertical: "top",
+                horizontal: "right",
               }}
               keepMounted
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
+                vertical: "top",
+                horizontal: "right",
               }}
               open={open}
               onClose={handleClose}
             >
               {menuItems.map((item) => (
-                <MenuItem key={item.href} onClick={handleClose} component={Link} href={item.href} sx={{ color: 'inherit' }}>
+                <MenuItem
+                  key={item.href}
+                  onClick={handleClose}
+                  component={Link}
+                  href={item.href}
+                  sx={{ color: "inherit" }}
+                >
                   {item.text}
                 </MenuItem>
               ))}
             </Menu>
           </>
         ) : (
-          <Box sx={{ display: 'flex', gap: 1 }}>
+          <Box sx={{ display: "flex", gap: 1 }}>
             {menuItems.map((item) => (
               <Button
                 key={item.href}
                 variant="hoverEnabled"
                 sx={{
-                  color: '#fff',
-                  '@media (hover: hover) and (pointer: fine)': {
-                    '&:hover': {
-                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                  color: "#fff",
+                  "@media (hover: hover) and (pointer: fine)": {
+                    "&:hover": {
+                      backgroundColor: "rgba(255, 255, 255, 0.1)",
                     },
                   },
                 }}

@@ -48,7 +48,10 @@ export const skills: Skill[] = [
       { name: "Cloudflare", imagePath: "images/skill/cloudflare.png" },
       { name: "Azure", imagePath: "images/skill/azure.png" },
       { name: "Vercel", imagePath: "images/skill/vercel.png" },
-      { name: "Neon - Serverless Postgres", imagePath: "images/skill/neon.png" }
+      {
+        name: "Neon - Serverless Postgres",
+        imagePath: "images/skill/neon.png",
+      },
     ],
   },
   {
@@ -60,8 +63,14 @@ export const skills: Skill[] = [
       { name: "GitHub", imagePath: "images/skill/github.png" },
       { name: "Jest", imagePath: "images/skill/jest.png" },
       { name: "Test-Driven Development" },
-      { name: "Google Workspace", imagePath: "images/skill/googleworkspace.png" },
-      { name: "Microsoft Office", imagePath: "images/skill/microsoftoffice.png" },
+      {
+        name: "Google Workspace",
+        imagePath: "images/skill/googleworkspace.png",
+      },
+      {
+        name: "Microsoft Office",
+        imagePath: "images/skill/microsoftoffice.png",
+      },
     ],
   },
   {

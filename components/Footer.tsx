@@ -1,8 +1,8 @@
-import { Box, Container, IconButton, Link, Typography } from '@mui/material';
+import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import EmailIcon from '@mui/icons-material/Email';
 import XIcon from '@mui/icons-material/X';
+import { Box, Container, IconButton, Link, Typography } from '@mui/material';
 
 export default function Footer() {
   return (
@@ -10,55 +10,76 @@ export default function Footer() {
       component="footer"
       sx={{
         py: 3,
-        mt: 'auto',
-        backgroundColor: 'background.paper',
+        mt: "auto",
+        backgroundColor: "background.paper",
         borderTop: 1,
-        borderColor: 'divider',
+        borderColor: "divider",
       }}
     >
       <Container maxWidth="lg">
         <Box
           sx={{
-            display: 'flex',
-            flexDirection: { xs: 'column', sm: 'row' },
-            justifyContent: 'space-between',
-            alignItems: 'center',
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
+            justifyContent: "space-between",
+            alignItems: "center",
             gap: 2,
           }}
         >
-          <Box sx={{ display: 'flex', gap: 1 }}>
+          <Box sx={{ display: "flex", gap: 1 }}>
             <IconButton
               component="a"
               href="https://github.com/BatteredBiscuit"
               target="_blank"
               aria-label="GitHub"
               sx={{
-                '&:hover': {
-                  color: 'primary.main',
-                  '@media (hover: none)': {
-                    color: 'inherit',
+                "&:hover": {
+                  color: "primary.main",
+                  "@media (hover: none)": {
+                    color: "inherit",
                   },
                 },
               }}
             >
               <GitHubIcon />
             </IconButton>
-            <IconButton component="a" href="https://linkedin.com/in/hayden-o" target="_blank" aria-label="LinkedIn">
+            <IconButton
+              component="a"
+              href="https://linkedin.com/in/hayden-o"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
               <LinkedInIcon />
             </IconButton>
-            <IconButton component="a" href="https://twitter.com/hayden_oneill" target="_blank" aria-label="X (Twitter)">
+            <IconButton
+              component="a"
+              href="https://twitter.com/hayden_oneill"
+              target="_blank"
+              aria-label="X (Twitter)"
+            >
               <XIcon />
             </IconButton>
-            <IconButton component="a" href="mailto:me@hayden-oneill.io" aria-label="Email">
+            <IconButton
+              component="a"
+              href="mailto:me@hayden-oneill.io"
+              aria-label="Email"
+            >
               <EmailIcon />
             </IconButton>
           </Box>
 
           <Typography variant="body2" color="text.secondary">
-            © {new Date().getFullYear()} Made by Hayden O'Neill. All rights reserved.
+            © {new Date().getFullYear()} Made by Hayden O'Neill. All rights
+            reserved.
           </Typography>
 
-          <Link href="https://github.com/BatteredBiscuit/portfolio-website" target="_blank" color="primary" underline="hover" variant="body2">
+          <Link
+            href="https://github.com/BatteredBiscuit/portfolio-website"
+            target="_blank"
+            color="primary"
+            underline="hover"
+            variant="body2"
+          >
             View Source Code
           </Link>
         </Box>

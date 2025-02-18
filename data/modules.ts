@@ -3,7 +3,7 @@ interface DegreeInfo {
   classification: string;
   overallPercentage: string;
   period: string;
-  status: 'predicted' | 'final';
+  status: "predicted" | "final";
 }
 
 interface Module {
@@ -39,7 +39,7 @@ export const degreeInfo: DegreeInfo = {
   classification: "First Class Honours",
   overallPercentage: "82.5%",
   period: "2022-2025",
-  status: 'predicted',
+  status: "predicted",
 };
 
 export const modules: YearModules[] = [
@@ -110,7 +110,8 @@ export const modules: YearModules[] = [
       },
       {
         name: "Computer Networks, Security, and Operating Systems",
-        description: "Fundamentals of networking, security, and OS architecture.",
+        description:
+          "Fundamentals of networking, security, and OS architecture.",
         grade: "92%",
       },
     ],
@@ -121,7 +122,8 @@ export const modules: YearModules[] = [
     modules: [
       {
         name: "Team Project and Professionalism",
-        description: "Collaborative software development and professional skills.",
+        description:
+          "Collaborative software development and professional skills.",
         grade: "In Progress",
       },
       {
@@ -131,12 +133,14 @@ export const modules: YearModules[] = [
       },
       {
         name: "Cloud Computing",
-        description: "Cloud services, virtualization, and deployment strategies.",
+        description:
+          "Cloud services, virtualization, and deployment strategies.",
         grade: "In Progress",
       },
       {
         name: "Data Security and Governance",
-        description: "Information security principles and regulatory compliance.",
+        description:
+          "Information security principles and regulatory compliance.",
         grade: "In Progress",
       },
       {

@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { ThemeProvider } from '@mui/material/styles';
-import { CssBaseline } from '@mui/material';
-import getTheme from '@/styles/theme';
 import { ThemeContextProvider, useThemeContext } from '@/contexts/ThemeContext';
+import getTheme from '@/styles/theme';
+import { CssBaseline } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
 
 function ThemeWrapper({ children }: { children: React.ReactNode }) {
   const { isDarkMode } = useThemeContext();
@@ -17,7 +17,11 @@ function ThemeWrapper({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function ClientThemeProvider({ children }: { children: React.ReactNode }) {
+export default function ClientThemeProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <ThemeContextProvider>
       <ThemeWrapper>{children}</ThemeWrapper>
