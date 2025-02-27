@@ -1,16 +1,31 @@
 "use client";
 
-import Image from 'next/image';
-import { useState } from 'react';
-
-import FadeIn from '@/components/animations/FadeIn';
-import Navbar from '@/components/Navbar';
-import { certificates, degreeInfo, modules, secondaryEducation } from '@/data/modules';
-import { skills } from '@/data/skills';
 import {
-    Avatar, Box, Chip, Container, Grid, Link, Paper, Stack, Tab, Tabs, Typography, useMediaQuery
-} from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+  Avatar,
+  Box,
+  Chip,
+  Container,
+  Grid,
+  Link,
+  Paper,
+  Stack,
+  Tab,
+  Tabs,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
+import {
+  certificates,
+  degreeInfo,
+  modules,
+  secondaryEducation,
+} from "@/data/modules";
+import FadeIn from "@/components/animations/FadeIn";
+import { useTheme } from "@mui/material/styles";
+import Navbar from "@/components/Navbar";
+import { skills } from "@/data/skills";
+import { useState } from "react";
+import Image from "next/image";
 
 export default function About() {
   const theme = useTheme();

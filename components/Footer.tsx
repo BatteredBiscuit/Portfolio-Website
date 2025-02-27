@@ -1,8 +1,8 @@
-import EmailIcon from '@mui/icons-material/Email';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import XIcon from '@mui/icons-material/X';
-import { Box, Container, IconButton, Link, Typography } from '@mui/material';
+import { Box, Container, IconButton, Link, Typography } from "@mui/material";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import EmailIcon from "@mui/icons-material/Email";
+import XIcon from "@mui/icons-material/X";
 
 export default function Footer() {
   return (

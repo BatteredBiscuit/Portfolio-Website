@@ -1,8 +1,7 @@
 "use client";
 
-import { ReactNode, useEffect, useRef } from 'react';
-
-import { Box } from '@mui/material';
+import { ReactNode, useEffect, useRef } from "react";
+import { Box } from "@mui/material";
 
 interface FadeInProps {
   children: ReactNode;

@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from 'framer-motion';
-import { ReactNode } from 'react';
+import { motion } from "framer-motion";
+import { ReactNode } from "react";
 
 export default function PageTransition({ children }: { children: ReactNode }) {
   return (

@@ -1,14 +1,21 @@
-import Link from 'next/link';
-import { useState } from 'react';
-
-import { useThemeContext } from '@/contexts/ThemeContext';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
-import MenuIcon from '@mui/icons-material/Menu';
 import {
-    AppBar, Box, Button, IconButton, Menu, MenuItem, Toolbar, Typography, useMediaQuery
-} from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+  AppBar,
+  Box,
+  Button,
+  IconButton,
+  Menu,
+  MenuItem,
+  Toolbar,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import { useThemeContext } from "@/contexts/ThemeContext";
+import MenuIcon from "@mui/icons-material/Menu";
+import { useTheme } from "@mui/material/styles";
+import { useState } from "react";
+import Link from "next/link";
 
 interface MenuItem {
   text: string;

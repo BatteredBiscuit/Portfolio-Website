@@ -1,9 +1,16 @@
 "use client";
 
-import FadeIn from '@/components/animations/FadeIn';
-import Navbar from '@/components/Navbar';
-import { Box, Container, Grid, Paper, Typography, useMediaQuery } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+import {
+  Box,
+  Container,
+  Grid,
+  Paper,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
+import FadeIn from "@/components/animations/FadeIn";
+import { useTheme } from "@mui/material/styles";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   const theme = useTheme();

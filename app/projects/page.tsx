@@ -1,13 +1,22 @@
 "use client";
 
-import FadeIn from '@/components/animations/FadeIn';
-import Navbar from '@/components/Navbar';
-import { projects } from '@/data/projects';
 import {
-    Box, Button, Card, CardActions, CardContent, Chip, Container, Grid, Stack, Typography,
-    useMediaQuery
-} from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+  Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Chip,
+  Container,
+  Grid,
+  Stack,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
+import FadeIn from "@/components/animations/FadeIn";
+import { useTheme } from "@mui/material/styles";
+import { projects } from "@/data/projects";
+import Navbar from "@/components/Navbar";
 
 export default function Projects() {
   const theme = useTheme();

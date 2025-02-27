@@ -1,13 +1,25 @@
 "use client";
 
-import FadeIn from '@/components/animations/FadeIn';
-import Navbar from '@/components/Navbar';
-import { experiences } from '@/data/experiences';
 import {
-    Timeline, TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineSeparator
-} from '@mui/lab';
-import { Avatar, Box, Container, Paper, Typography, useMediaQuery } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+  Timeline,
+  TimelineConnector,
+  TimelineContent,
+  TimelineDot,
+  TimelineItem,
+  TimelineSeparator,
+} from "@mui/lab";
+import {
+  Avatar,
+  Box,
+  Container,
+  Paper,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
+import FadeIn from "@/components/animations/FadeIn";
+import { experiences } from "@/data/experiences";
+import { useTheme } from "@mui/material/styles";
+import Navbar from "@/components/Navbar";
 
 export default function Experience() {
   const theme = useTheme();

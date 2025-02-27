@@ -1,10 +1,9 @@
-import { ReactNode } from 'react';
-
-import Footer from '@/components/Footer';
-import PageTransition from '@/components/PageTransition';
-import ClientThemeProvider from '@/components/Providers/ClientThemeProvider';
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import ClientThemeProvider from "@/components/Providers/ClientThemeProvider";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import PageTransition from "@/components/PageTransition";
+import { Analytics } from "@vercel/analytics/react";
+import Footer from "@/components/Footer";
+import { ReactNode } from "react";
 
 interface RootLayoutProps {
   children: ReactNode;

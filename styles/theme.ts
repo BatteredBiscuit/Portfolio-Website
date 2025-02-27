@@ -1,22 +1,21 @@
-// src/styles/theme.ts
-import { createTheme, Theme } from '@mui/material/styles';
+import { createTheme, Theme } from "@mui/material/styles";
 
 const getTheme = (isDarkMode: boolean): Theme =>
   createTheme({
     palette: {
       mode: isDarkMode ? "dark" : "light",
       primary: {
-        main: isDarkMode ? "#60a5fa" : "#2563eb", // Modern blue
+        main: isDarkMode ? "#60a5fa" : "#2563eb",
         light: isDarkMode ? "#93c5fd" : "#3b82f6",
         dark: isDarkMode ? "#2563eb" : "#1d4ed8",
       },
       secondary: {
-        main: isDarkMode ? "#a855f7" : "#7c3aed", // Purple accent
+        main: isDarkMode ? "#a855f7" : "#7c3aed",
         light: isDarkMode ? "#c084fc" : "#8b5cf6",
         dark: isDarkMode ? "#7c3aed" : "#6d28d9",
       },
       background: {
-        default: isDarkMode ? "#0f172a" : "#f8fafc", // Slate dark/light
+        default: isDarkMode ? "#0f172a" : "#f8fafc",
         paper: isDarkMode ? "#1e293b" : "#ffffff",
       },
       text: {
@@ -45,7 +44,6 @@ const getTheme = (isDarkMode: boolean): Theme =>
         },
       },
       MuiPaper: {
-        // Custom variant to enable hover effect (lift) only on devices that support hover.
         variants: [
           {
             props: { variant: "hoverEnabled" },
@@ -66,7 +64,6 @@ const getTheme = (isDarkMode: boolean): Theme =>
         styleOverrides: {
           root: {
             borderRadius: 12,
-            // Default (non-hover) shadow
             boxShadow: isDarkMode
               ? "0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3)"
               : "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05)",
