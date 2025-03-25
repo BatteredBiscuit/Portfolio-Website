@@ -160,15 +160,20 @@ export default function Navbar() {
             {menuItems.map((item) =>
               item.children ? (
                 <div key={item.text} ref={dropdownAnchorRef}>
-                  {" "}
-                  {/* Move ref to the div container */}
                   <Button
                     color="inherit"
                     component={Link}
                     href={item.href}
                     onMouseEnter={() => setDropdownOpen(true)}
                     onClick={handleToggleDropdown}
-                    sx={{ color: "#fff" }}
+                    sx={{
+                      color: "#fff",
+                      fontSize: "1rem",
+                      fontWeight: 500,
+                      "&:hover": {
+                        backgroundColor: (theme) => theme.palette.primary.dark,
+                      },
+                    }}
                   >
                     {item.text}
                   </Button>
@@ -176,37 +181,81 @@ export default function Navbar() {
                     open={dropdownOpen}
                     anchorEl={dropdownAnchorRef.current}
                     role={undefined}
-                    placement="bottom-start"
+                    placement="bottom"
                     transition
                     disablePortal
                     onMouseLeave={() => setDropdownOpen(false)}
+                    sx={{
+                      zIndex: 1300,
+                      width: "auto",
+                      minWidth: dropdownAnchorRef.current
+                        ? dropdownAnchorRef.current.offsetWidth + 20
+                        : "auto",
+                      marginTop: "0", // Remove any default margin
+                    }}
+                    modifiers={[
+                      {
+                        name: "offset",
+                        options: {
+                          offset: [0, 0], // Align with bottom of navbar
+                        },
+                      },
+                    ]}
                   >
                     {({ TransitionProps, placement }) => (
                       <Grow
                         {...TransitionProps}
                         style={{
-                          transformOrigin:
-                            placement === "bottom-start"
-                              ? "left top"
-                              : "left bottom",
+                          transformOrigin: "center top",
                         }}
                       >
-                        <Paper>
+                        <Paper
+                          elevation={4}
+                          sx={{
+                            backgroundColor: (theme) =>
+                              theme.palette.primary.main,
+                            borderRadius: "0 0 8px 8px",
+                            mt: 0,
+                            width: "100%",
+                            overflow: "hidden",
+                          }}
+                        >
                           <ClickAwayListener onClickAway={handleCloseDropdown}>
-                            <MenuList autoFocusItem={dropdownOpen}>
-                              <MenuItem
-                                component={Link}
-                                href={item.href}
-                                onClick={handleCloseDropdown}
-                              >
-                                {item.text}
-                              </MenuItem>
-                              {item.children.map((child) => (
+                            <MenuList
+                              autoFocusItem={dropdownOpen}
+                              sx={{
+                                padding: 0,
+                                display: "flex",
+                                flexDirection: "column",
+                                width: "100%",
+                              }}
+                            >
+                              {item.children.map((child, index) => (
                                 <MenuItem
                                   key={child.text}
                                   component={Link}
                                   href={child.href}
                                   onClick={handleCloseDropdown}
+                                  sx={{
+                                    color: "#fff",
+                                    padding: "8px 16px",
+                                    justifyContent: "center",
+                                    fontSize: "1rem",
+                                    fontWeight: 500,
+                                    width: "100%",
+                                    whiteSpace: "nowrap",
+                                    // Make sure background matches exactly with AppBar
+                                    backgroundColor: "transparent",
+                                    "&:hover": {
+                                      backgroundColor: (theme) =>
+                                        theme.palette.primary.dark,
+                                    },
+                                    // Apply border radius to last item
+                                    borderRadius:
+                                      index === item.children.length - 1
+                                        ? "0 0 8px 8px"
+                                        : "0",
+                                  }}
                                 >
                                   {child.text}
                                 </MenuItem>
@@ -224,7 +273,17 @@ export default function Navbar() {
                   color="inherit"
                   component={Link}
                   href={item.href}
-                  sx={{ color: "#fff" }}
+                  sx={{
+                    color: "#fff",
+                    fontSize: "1rem",
+                    fontWeight: 500,
+                    "&:hover": {
+                      backgroundColor: (theme) =>
+                        theme.palette.mode === "dark"
+                          ? theme.palette.primary.dark
+                          : theme.palette.primary.dark,
+                    },
+                  }}
                 >
                   {item.text}
                 </Button>
