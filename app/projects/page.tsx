@@ -100,7 +100,9 @@ export default function Projects() {
                         ))}
                       </Stack>
                     </CardContent>
-                    {(project.githubUrl || project.demoUrl) && (
+                    {(project.githubUrl ||
+                      project.demoUrl ||
+                      project.linkUrl) && (
                       <CardActions
                         sx={{
                           p: isMobile ? 2 : 2.5,
@@ -123,6 +125,15 @@ export default function Projects() {
                             sx={{ color: theme.palette.primary.main }}
                           >
                             Live Demo
+                          </Button>
+                        )}
+                        {project.linkUrl && (
+                          <Button
+                            size="small"
+                            href={project.linkUrl}
+                            sx={{ color: theme.palette.primary.main }}
+                          >
+                            {project.title} Link
                           </Button>
                         )}
                       </CardActions>

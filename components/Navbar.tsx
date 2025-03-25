@@ -8,25 +8,36 @@ import {
   Toolbar,
   Typography,
   useMediaQuery,
+  Popper,
+  Grow,
+  Paper,
+  ClickAwayListener,
+  MenuList,
 } from "@mui/material";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import { useThemeContext } from "@/contexts/ThemeContext";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useTheme } from "@mui/material/styles";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 
 interface MenuItem {
   text: string;
   href: string;
+  children?: MenuItem[];
 }
 
 const menuItems: MenuItem[] = [
   { text: "Home", href: "/" },
-  { text: "About", href: "/about" },
-  { text: "Experience", href: "/experience" },
-  { text: "Projects", href: "/projects" },
+  {
+    text: "About",
+    href: "/about",
+    children: [
+      { text: "Experience", href: "/experience" },
+      { text: "Projects", href: "/projects" },
+    ],
+  },
 ];
 
 export default function Navbar() {
@@ -36,12 +47,30 @@ export default function Navbar() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
+  // For dropdown
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownAnchorRef = useRef<HTMLDivElement>(null); // Changed from HTMLButtonElement to HTMLDivElement
+
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleToggleDropdown = () => {
+    setDropdownOpen((prevOpen) => !prevOpen);
+  };
+
+  const handleCloseDropdown = (event: Event | React.SyntheticEvent) => {
+    if (
+      dropdownAnchorRef.current &&
+      dropdownAnchorRef.current.contains(event.target as HTMLElement)
+    ) {
+      return;
+    }
+    setDropdownOpen(false);
   };
 
   return (
@@ -76,9 +105,9 @@ export default function Navbar() {
               size="large"
               edge="end"
               color="inherit"
-              sx={{ color: "#fff" }}
               aria-label="menu"
               onClick={handleMenu}
+              sx={{ color: "#fff" }}
             >
               <MenuIcon />
             </IconButton>
@@ -98,38 +127,109 @@ export default function Navbar() {
               onClose={handleClose}
             >
               {menuItems.map((item) => (
-                <MenuItem
-                  key={item.href}
-                  onClick={handleClose}
-                  component={Link}
-                  href={item.href}
-                  sx={{ color: "inherit" }}
-                >
-                  {item.text}
-                </MenuItem>
+                <div key={item.text}>
+                  <MenuItem onClick={handleClose}>
+                    <Link
+                      href={item.href}
+                      style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                      {item.text}
+                    </Link>
+                  </MenuItem>
+                  {item.children &&
+                    item.children.map((child) => (
+                      <MenuItem
+                        key={child.text}
+                        onClick={handleClose}
+                        sx={{ pl: 4 }}
+                      >
+                        <Link
+                          href={child.href}
+                          style={{ textDecoration: "none", color: "inherit" }}
+                        >
+                          {child.text}
+                        </Link>
+                      </MenuItem>
+                    ))}
+                </div>
               ))}
             </Menu>
           </>
         ) : (
-          <Box sx={{ display: "flex", gap: 1 }}>
-            {menuItems.map((item) => (
-              <Button
-                key={item.href}
-                variant="hoverEnabled"
-                sx={{
-                  color: "#fff",
-                  "@media (hover: hover) and (pointer: fine)": {
-                    "&:hover": {
-                      backgroundColor: "rgba(255, 255, 255, 0.1)",
-                    },
-                  },
-                }}
-                component={Link}
-                href={item.href}
-              >
-                {item.text}
-              </Button>
-            ))}
+          <Box sx={{ display: "flex" }}>
+            {menuItems.map((item) =>
+              item.children ? (
+                <div key={item.text} ref={dropdownAnchorRef}>
+                  {" "}
+                  {/* Move ref to the div container */}
+                  <Button
+                    color="inherit"
+                    component={Link}
+                    href={item.href}
+                    onMouseEnter={() => setDropdownOpen(true)}
+                    onClick={handleToggleDropdown}
+                    sx={{ color: "#fff" }}
+                  >
+                    {item.text}
+                  </Button>
+                  <Popper
+                    open={dropdownOpen}
+                    anchorEl={dropdownAnchorRef.current}
+                    role={undefined}
+                    placement="bottom-start"
+                    transition
+                    disablePortal
+                    onMouseLeave={() => setDropdownOpen(false)}
+                  >
+                    {({ TransitionProps, placement }) => (
+                      <Grow
+                        {...TransitionProps}
+                        style={{
+                          transformOrigin:
+                            placement === "bottom-start"
+                              ? "left top"
+                              : "left bottom",
+                        }}
+                      >
+                        <Paper>
+                          <ClickAwayListener onClickAway={handleCloseDropdown}>
+                            <MenuList autoFocusItem={dropdownOpen}>
+                              <MenuItem
+                                component={Link}
+                                href={item.href}
+                                onClick={handleCloseDropdown}
+                              >
+                                {item.text}
+                              </MenuItem>
+                              {item.children.map((child) => (
+                                <MenuItem
+                                  key={child.text}
+                                  component={Link}
+                                  href={child.href}
+                                  onClick={handleCloseDropdown}
+                                >
+                                  {child.text}
+                                </MenuItem>
+                              ))}
+                            </MenuList>
+                          </ClickAwayListener>
+                        </Paper>
+                      </Grow>
+                    )}
+                  </Popper>
+                </div>
+              ) : (
+                <Button
+                  key={item.text}
+                  color="inherit"
+                  component={Link}
+                  href={item.href}
+                  sx={{ color: "#fff" }}
+                >
+                  {item.text}
+                </Button>
+              )
+            )}
           </Box>
         )}
       </Toolbar>

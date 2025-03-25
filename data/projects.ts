@@ -4,6 +4,7 @@ export interface Project {
   technologies: string[];
   githubUrl?: string;
   demoUrl?: string;
+  linkUrl?: string;
 }
 
 export const projects: Project[] = [
@@ -22,7 +23,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/BatteredBiscuit/portfolio-website",
   },
   {
-    title: "Cardex - cardex-app.com",
+    title: "Cardex",
     description: "An website to manage your trading card collection.",
     technologies: [
       "Next.js",
@@ -32,5 +33,6 @@ export const projects: Project[] = [
       "Git",
       "GitHub",
     ],
+    linkUrl: "https://cardex-app.com",
   },
 ];
