@@ -24,7 +24,6 @@ import Navbar from "@/components/Navbar";
 export default function Experience() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const isDarkMode = theme.palette.mode === "dark";
 
   return (
     <Box
@@ -45,16 +44,13 @@ export default function Experience() {
             elevation={2}
             sx={{
               p: isMobile ? 3 : 5,
-              background: isDarkMode
-                ? "linear-gradient(to right bottom, #1e293b, #0f172a)"
-                : "linear-gradient(to right bottom, #ffffff, #f8fafc)",
               borderRadius: 3,
             }}
           >
             <Typography
               variant="h4"
               gutterBottom
-              sx={{ mb: 4, color: theme.palette.text.primary, fontWeight: 600 }}
+              sx={{ mb: 4, fontWeight: 600 }}
             >
               Work Experience
             </Typography>
@@ -87,10 +83,7 @@ export default function Experience() {
                         <Paper
                           elevation={2}
                           variant="hoverEnabled"
-                          sx={{
-                            p: isMobile ? 2 : 3,
-                            background: theme.palette.background.paper,
-                          }}
+                          sx={{ p: isMobile ? 2 : 3 }}
                         >
                           <Typography
                             variant="h6"
@@ -100,11 +93,7 @@ export default function Experience() {
                           >
                             {experience.title}
                           </Typography>
-                          <Typography
-                            variant="subtitle1"
-                            sx={{ color: theme.palette.text.primary }}
-                            gutterBottom
-                          >
+                          <Typography variant="subtitle1" gutterBottom>
                             {experience.company}
                           </Typography>
                           <Typography
@@ -114,13 +103,7 @@ export default function Experience() {
                           >
                             {experience.period}
                           </Typography>
-                          <Typography
-                            variant="body1"
-                            sx={{
-                              lineHeight: 1.7,
-                              color: theme.palette.text.primary,
-                            }}
-                          >
+                          <Typography variant="body1" sx={{ lineHeight: 1.7 }}>
                             {experience.description}
                           </Typography>
                         </Paper>

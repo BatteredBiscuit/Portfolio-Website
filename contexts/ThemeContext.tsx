@@ -26,8 +26,18 @@ export function ThemeContextProvider({ children }: ThemeProviderProps) {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
+    // Check for stored preference first
     const storedTheme = localStorage.getItem("theme");
-    setIsDarkMode(storedTheme === "dark");
+    if (storedTheme) {
+      setIsDarkMode(storedTheme === "dark");
+    } else {
+      // If no stored preference, use system preference
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      setIsDarkMode(prefersDark);
+      localStorage.setItem("theme", prefersDark ? "dark" : "light");
+    }
   }, []);
 
   const toggleTheme = () => {

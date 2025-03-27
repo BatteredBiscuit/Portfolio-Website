@@ -49,7 +49,7 @@ export default function Navbar() {
 
   // For dropdown
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const dropdownAnchorRef = useRef<HTMLDivElement>(null); // Changed from HTMLButtonElement to HTMLDivElement
+  const dropdownAnchorRef = useRef<HTMLDivElement>(null);
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -74,12 +74,27 @@ export default function Navbar() {
   };
 
   return (
-    <AppBar position="static" color="primary">
+    <AppBar
+      position="static"
+      elevation={0}
+      sx={{
+        backgroundColor: theme.palette.primary.main,
+        borderBottom: `1px solid ${theme.palette.divider}`,
+        boxShadow: `0 2px 10px rgba(0, 0, 0, 0.1)`,
+      }}
+    >
       <Toolbar>
         <Typography
           variant="h6"
-          component="div"
-          sx={{ flexGrow: 1, color: "#fff" }}
+          component={Link}
+          href="/"
+          sx={{
+            flexGrow: 1,
+            color: theme.palette.primary.contrastText,
+            textDecoration: "none",
+            fontWeight: 600,
+            letterSpacing: "0.5px",
+          }}
         >
           Hayden O'Neill Portfolio
         </Typography>
@@ -87,14 +102,15 @@ export default function Navbar() {
         <IconButton
           sx={{
             mr: 1,
-            color: "#fff",
-            transition: "transform 0.2s ease-in-out",
+            color: theme.palette.primary.contrastText,
+            transition: "transform 0.3s ease-in-out",
             "&:hover": {
               transform: "rotate(90deg)",
+              backgroundColor: "rgba(255, 255, 255, 0.1)",
             },
           }}
           onClick={toggleTheme}
-          color="inherit"
+          aria-label="Toggle dark mode"
         >
           {isDarkMode ? <Brightness7Icon /> : <Brightness4Icon />}
         </IconButton>
@@ -104,10 +120,14 @@ export default function Navbar() {
             <IconButton
               size="large"
               edge="end"
-              color="inherit"
               aria-label="menu"
               onClick={handleMenu}
-              sx={{ color: "#fff" }}
+              sx={{
+                color: theme.palette.primary.contrastText,
+                "&:hover": {
+                  backgroundColor: "rgba(255, 255, 255, 0.1)",
+                },
+              }}
             >
               <MenuIcon />
             </IconButton>
@@ -125,13 +145,35 @@ export default function Navbar() {
               }}
               open={open}
               onClose={handleClose}
+              PaperProps={{
+                sx: {
+                  mt: 1.5,
+                  borderRadius: 2,
+                  boxShadow: 4,
+                  backgroundColor: theme.palette.background.paper,
+                },
+              }}
             >
               {menuItems.map((item) => (
                 <div key={item.text}>
-                  <MenuItem onClick={handleClose}>
+                  <MenuItem
+                    onClick={handleClose}
+                    sx={{
+                      color: theme.palette.text.primary,
+                      fontWeight: 500,
+                      "&:hover": {
+                        backgroundColor: theme.palette.action.hover,
+                      },
+                    }}
+                  >
                     <Link
                       href={item.href}
-                      style={{ textDecoration: "none", color: "inherit" }}
+                      style={{
+                        textDecoration: "none",
+                        color: "inherit",
+                        display: "block",
+                        width: "100%",
+                      }}
                     >
                       {item.text}
                     </Link>
@@ -141,11 +183,22 @@ export default function Navbar() {
                       <MenuItem
                         key={child.text}
                         onClick={handleClose}
-                        sx={{ pl: 4 }}
+                        sx={{
+                          pl: 4,
+                          color: theme.palette.text.primary,
+                          "&:hover": {
+                            backgroundColor: theme.palette.action.hover,
+                          },
+                        }}
                       >
                         <Link
                           href={child.href}
-                          style={{ textDecoration: "none", color: "inherit" }}
+                          style={{
+                            textDecoration: "none",
+                            color: "inherit",
+                            display: "block",
+                            width: "100%",
+                          }}
                         >
                           {child.text}
                         </Link>
@@ -161,17 +214,19 @@ export default function Navbar() {
               item.children ? (
                 <div key={item.text} ref={dropdownAnchorRef}>
                   <Button
-                    color="inherit"
                     component={Link}
                     href={item.href}
                     onMouseEnter={() => setDropdownOpen(true)}
                     onClick={handleToggleDropdown}
                     sx={{
-                      color: "#fff",
+                      color: theme.palette.primary.contrastText,
                       fontSize: "1rem",
                       fontWeight: 500,
+                      padding: "6px 16px",
+                      borderRadius: 2,
+                      textTransform: "none",
                       "&:hover": {
-                        backgroundColor: (theme) => theme.palette.primary.dark,
+                        backgroundColor: "rgba(255, 255, 255, 0.1)",
                       },
                     }}
                   >
@@ -191,16 +246,8 @@ export default function Navbar() {
                       minWidth: dropdownAnchorRef.current
                         ? dropdownAnchorRef.current.offsetWidth + 20
                         : "auto",
-                      marginTop: "0", // Remove any default margin
+                      marginTop: "0",
                     }}
-                    modifiers={[
-                      {
-                        name: "offset",
-                        options: {
-                          offset: [0, 0], // Align with bottom of navbar
-                        },
-                      },
-                    ]}
                   >
                     {({ TransitionProps, placement }) => (
                       <Grow
@@ -212,8 +259,8 @@ export default function Navbar() {
                         <Paper
                           elevation={4}
                           sx={{
-                            backgroundColor: (theme) =>
-                              theme.palette.primary.main,
+                            backgroundColor: theme.palette.primary.main,
+                            color: theme.palette.primary.contrastText,
                             borderRadius: "0 0 8px 8px",
                             mt: 0,
                             width: "100%",
@@ -237,20 +284,18 @@ export default function Navbar() {
                                   href={child.href}
                                   onClick={handleCloseDropdown}
                                   sx={{
-                                    color: "#fff",
+                                    color: theme.palette.primary.contrastText,
                                     padding: "8px 16px",
                                     justifyContent: "center",
                                     fontSize: "1rem",
                                     fontWeight: 500,
                                     width: "100%",
                                     whiteSpace: "nowrap",
-                                    // Make sure background matches exactly with AppBar
                                     backgroundColor: "transparent",
                                     "&:hover": {
-                                      backgroundColor: (theme) =>
-                                        theme.palette.primary.dark,
+                                      backgroundColor:
+                                        "rgba(255, 255, 255, 0.1)",
                                     },
-                                    // Apply border radius to last item
                                     borderRadius:
                                       index === item.children.length - 1
                                         ? "0 0 8px 8px"
@@ -270,18 +315,17 @@ export default function Navbar() {
               ) : (
                 <Button
                   key={item.text}
-                  color="inherit"
                   component={Link}
                   href={item.href}
                   sx={{
-                    color: "#fff",
+                    color: theme.palette.primary.contrastText,
                     fontSize: "1rem",
                     fontWeight: 500,
+                    padding: "6px 16px",
+                    borderRadius: 2,
+                    textTransform: "none",
                     "&:hover": {
-                      backgroundColor: (theme) =>
-                        theme.palette.mode === "dark"
-                          ? theme.palette.primary.dark
-                          : theme.palette.primary.dark,
+                      backgroundColor: "rgba(255, 255, 255, 0.1)",
                     },
                   }}
                 >

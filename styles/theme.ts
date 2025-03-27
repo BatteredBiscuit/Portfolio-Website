@@ -1,218 +1,298 @@
-import { createTheme, Theme } from "@mui/material/styles";
+import { createTheme, alpha } from "@mui/material/styles";
 
-const getTheme = (isDarkMode: boolean): Theme =>
-  createTheme({
-    palette: {
-      mode: isDarkMode ? "dark" : "light",
-      primary: {
-        main: isDarkMode ? "#60a5fa" : "#2563eb",
-        light: isDarkMode ? "#93c5fd" : "#3b82f6",
-        dark: isDarkMode ? "#2563eb" : "#1d4ed8",
-      },
-      secondary: {
-        main: isDarkMode ? "#a855f7" : "#7c3aed",
-        light: isDarkMode ? "#c084fc" : "#8b5cf6",
-        dark: isDarkMode ? "#7c3aed" : "#6d28d9",
-      },
-      background: {
-        default: isDarkMode ? "#0f172a" : "#f8fafc",
-        paper: isDarkMode ? "#1e293b" : "#ffffff",
-      },
-      text: {
-        primary: isDarkMode ? "#f1f5f9" : "#0f172a",
-        secondary: isDarkMode ? "#cbd5e1" : "#475569",
-      },
+// Define color palette constants
+const colors = {
+  light: {
+    primary: {
+      main: "#0f3460", // Deeper navy blue
+      light: "#1a5086",
+      dark: "#092547",
+      contrastText: "#ffffff",
     },
-    typography: {
-      h1: { fontWeight: 600, letterSpacing: "-0.5px" },
-      h2: { fontWeight: 600, letterSpacing: "-0.5px" },
-      h4: { fontWeight: 600, letterSpacing: "-0.5px" },
-      h5: { fontWeight: 500 },
-      h6: { fontWeight: 500 },
-      body1: { lineHeight: 1.8 },
+    secondary: {
+      main: "#e6a417", // Warmer gold/amber
+      light: "#f2b940",
+      dark: "#c38a14",
+      contrastText: "#ffffff",
+    },
+    background: {
+      default: "#8fa8c6", // Muted blue-gray
+      paper: "#aabfdb", // Slightly lighter but still muted
+      gradient: "linear-gradient(to right bottom, #aabfdb, #8fa8c6)",
+    },
+    text: {
+      primary: "#0f2d50", // Dark navy
+      secondary: "#2c4970", // Medium navy
+    },
+    divider: "rgba(0, 0, 0, 0.12)",
+    chipBackground: "rgba(15, 52, 96, 0.15)",
+  },
+  dark: {
+    primary: {
+      main: "#3b82f6", // Bright blue for dark mode
+      light: "#60a5fa",
+      dark: "#2563eb",
+      contrastText: "#ffffff",
+    },
+    secondary: {
+      main: "#fbbf24", // Brighter amber for dark mode
+      light: "#fcd34d",
+      dark: "#f59e0b",
+      contrastText: "#0f172a",
+    },
+    background: {
+      default: "#0a1929",
+      paper: "#10243e",
+      gradient: "linear-gradient(to right bottom, #10243e, #0a1929)",
+    },
+    text: {
+      primary: "#f8fafc",
+      secondary: "#cbd5e1",
+    },
+    divider: "rgba(255, 255, 255, 0.12)",
+    chipBackground: "rgba(42, 91, 153, 0.2)",
+  },
+};
+
+// Function to get theme based on mode
+const getTheme = (isDarkMode: boolean) => {
+  const colorMode = isDarkMode ? "dark" : "light";
+
+  return createTheme({
+    palette: {
+      mode: colorMode as "light" | "dark",
+      primary: colors[colorMode].primary,
+      secondary: colors[colorMode].secondary,
+      background: {
+        default: colors[colorMode].background.default,
+        paper: colors[colorMode].background.paper,
+      },
+      text: colors[colorMode].text,
+      divider: colors[colorMode].divider,
     },
     components: {
-      MuiAppBar: {
-        styleOverrides: {
-          root: {
-            background: isDarkMode ? "#1e293b" : "#2563eb",
-            color: "#ffffff",
-            boxShadow: isDarkMode
-              ? "0 1px 3px 0 rgba(0, 0, 0, 0.4)"
-              : "0 1px 3px 0 rgba(0, 0, 0, 0.1)",
-          },
-        },
-      },
       MuiPaper: {
+        styleOverrides: {
+          root: ({ theme }) => ({
+            backgroundImage: colors[colorMode].background.gradient,
+            transition: "all 0.3s ease-in-out",
+          }),
+        },
         variants: [
           {
             props: { variant: "hoverEnabled" },
             style: {
               transition:
-                "transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out",
-              "@media (hover: hover) and (pointer: fine)": {
-                "&:hover": {
-                  transform: "translateY(-2px)",
-                  boxShadow: isDarkMode
-                    ? "0 8px 12px -1px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4)"
-                    : "0 8px 12px -1px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.1)",
-                },
+                "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
+              "&:hover": {
+                transform: "translateY(-5px)",
+                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
               },
             },
           },
         ],
-        styleOverrides: {
-          root: {
-            borderRadius: 12,
-            boxShadow: isDarkMode
-              ? "0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3)"
-              : "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05)",
-            transition: "none",
-            "&:hover": {
-              transform: "none",
-              boxShadow: isDarkMode
-                ? "0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3)"
-                : "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05)",
-            },
-          },
-        },
       },
-      MuiButton: {
+      MuiCard: {
         variants: [
           {
             props: { variant: "hoverEnabled" },
             style: {
-              transition: "all 0.2s ease-in-out",
-              "@media (hover: hover) and (pointer: fine)": {
-                "&:hover": {
-                  transform: "translateY(-1px)",
-                },
+              transition:
+                "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
+              "&:hover": {
+                transform: "translateY(-5px)",
+                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
               },
             },
           },
         ],
+      },
+      MuiButton: {
         styleOverrides: {
           root: {
             textTransform: "none",
-            borderRadius: 8,
-            fontWeight: 500,
-            padding: "6px 16px",
-            "&.MuiButton-containedPrimary": {
-              color: "#ffffff",
-            },
-            transition: "none",
-            "&:hover": {
-              transform: "none",
-            },
+            fontWeight: 600,
+            borderRadius: "8px",
           },
         },
       },
       MuiChip: {
+        styleOverrides: {
+          root: ({ theme }) => ({
+            borderRadius: "6px",
+            "&.MuiChip-colorPrimary": {
+              backgroundColor: theme.palette.primary.main,
+              color: theme.palette.primary.contrastText,
+            },
+            "&.MuiChip-colorSecondary": {
+              backgroundColor: theme.palette.secondary.main,
+              color: theme.palette.secondary.contrastText,
+            },
+          }),
+        },
         variants: [
           {
             props: { variant: "hoverEnabled" },
-            style: {
+            style: ({ theme }) => ({
+              backgroundColor: theme.palette.primary.main,
+              color: theme.palette.primary.contrastText,
+              cursor: "pointer",
               transition: "all 0.2s ease-in-out",
-              "@media (hover: hover) and (pointer: fine)": {
-                "&:hover": {
-                  transform: "translateY(-1px)",
-                },
+              "&:hover": {
+                backgroundColor: theme.palette.primary.dark,
+                transform: "translateY(-2px)",
               },
-            },
+            }),
+          },
+          {
+            props: { variant: "technology" },
+            style: ({ theme }) => ({
+              backgroundColor: colors[colorMode].chipBackground,
+              color: theme.palette.primary.main,
+            }),
           },
         ],
+      },
+      MuiLink: {
         styleOverrides: {
-          root: {
-            borderRadius: 8,
-            transition: "none",
+          root: ({ theme }) => ({
+            color: theme.palette.primary.main,
+            textDecoration: "none",
+            fontWeight: 500,
             "&:hover": {
-              transform: "none",
+              textDecoration: "underline",
             },
-          },
-        },
-      },
-      MuiMenu: {
-        styleOverrides: {
-          paper: {
-            backgroundColor: isDarkMode ? "#1e293b" : "#ffffff",
-            color: isDarkMode ? "#f1f5f9" : "#0f172a",
-          },
-        },
-      },
-      MuiMenuItem: {
-        styleOverrides: {
-          root: {
-            "&:hover": {
-              backgroundColor: isDarkMode ? "#334155" : "#f1f5f9",
-            },
-          },
-        },
-      },
-      MuiTextField: {
-        styleOverrides: {
-          root: {
-            "& .MuiOutlinedInput-root": {
-              backgroundColor: isDarkMode ? "#1e293b" : "#ffffff",
-              "&:hover .MuiOutlinedInput-notchedOutline": {
-                borderColor: isDarkMode ? "#60a5fa" : "#2563eb",
-              },
-            },
-            "& .MuiInputBase-input": {
-              color: isDarkMode ? "#f1f5f9" : "#0f172a",
-            },
-            "& .MuiInputLabel-root": {
-              color: isDarkMode ? "#cbd5e1" : "#475569",
-            },
-            "& .MuiOutlinedInput-notchedOutline": {
-              borderColor: isDarkMode ? "#334155" : "#e2e8f0",
-            },
-          },
-        },
-      },
-      MuiInputBase: {
-        styleOverrides: {
-          root: {
-            backgroundColor: isDarkMode ? "#1e293b" : "#ffffff",
-            color: isDarkMode ? "#f1f5f9" : "#0f172a",
-          },
-        },
-      },
-      MuiFilledInput: {
-        styleOverrides: {
-          root: {
-            backgroundColor: isDarkMode ? "#334155" : "#f1f5f9",
-            "&:hover": {
-              backgroundColor: isDarkMode ? "#475569" : "#e2e8f0",
-            },
-            "&.Mui-focused": {
-              backgroundColor: isDarkMode ? "#334155" : "#f1f5f9",
-            },
-          },
+          }),
         },
       },
       MuiTypography: {
         styleOverrides: {
-          root: {
-            color: isDarkMode ? "#f1f5f9" : "#0f172a",
+          h1: {
+            fontSize: "2.5rem",
+            "@media (min-width:600px)": {
+              fontSize: "3.5rem",
+            },
           },
-          paragraph: {
-            color: isDarkMode ? "#f1f5f9" : "#0f172a",
+          h2: {
+            fontSize: "2rem",
+            "@media (min-width:600px)": {
+              fontSize: "2.75rem",
+            },
           },
-          body1: {
-            color: isDarkMode ? "#f1f5f9" : "#0f172a",
+          h3: {
+            fontSize: "1.75rem",
+            "@media (min-width:600px)": {
+              fontSize: "2.25rem",
+            },
           },
-          body2: {
-            color: isDarkMode ? "#cbd5e1" : "#475569",
+          h4: {
+            fontSize: "1.5rem",
+            "@media (min-width:600px)": {
+              fontSize: "1.75rem",
+            },
           },
         },
       },
       MuiCssBaseline: {
         styleOverrides: {
-          body: { backgroundColor: "transparent" },
-          html: { backgroundColor: isDarkMode ? "#0f172a" : "#f8fafc" },
+          body: {
+            scrollBehavior: "smooth",
+            transition: "background-color 0.3s ease",
+          },
         },
       },
     },
+    typography: {
+      fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
+      h1: {
+        fontWeight: 700,
+      },
+      h2: {
+        fontWeight: 700,
+      },
+      h3: {
+        fontWeight: 600,
+      },
+      h4: {
+        fontWeight: 600,
+      },
+      h5: {
+        fontWeight: 600,
+      },
+      h6: {
+        fontWeight: 600,
+      },
+    },
+    shape: {
+      borderRadius: 8,
+    },
+    transitions: {
+      easing: {
+        easeInOut: "cubic-bezier(0.4, 0, 0.2, 1)",
+        easeOut: "cubic-bezier(0.0, 0, 0.2, 1)",
+        easeIn: "cubic-bezier(0.4, 0, 1, 1)",
+        sharp: "cubic-bezier(0.4, 0, 0.6, 1)",
+      },
+      duration: {
+        shortest: 150,
+        shorter: 200,
+        short: 250,
+        standard: 300,
+        complex: 375,
+        enteringScreen: 225,
+        leavingScreen: 195,
+      },
+    },
   });
+};
 
 export default getTheme;
+
+// Custom theme declaration to support new variants and properties
+declare module "@mui/material/styles" {
+  interface Theme {
+    status?: {
+      danger?: string;
+    };
+  }
+
+  interface ThemeOptions {
+    status?: {
+      danger?: string;
+    };
+  }
+
+  interface Palette {
+    chipBackground?: string;
+  }
+
+  interface PaletteOptions {
+    chipBackground?: string;
+  }
+
+  interface TypeBackground {
+    gradient?: string;
+  }
+}
+
+// Add Paper variant
+declare module "@mui/material/Paper" {
+  interface PaperPropsVariantOverrides {
+    hoverEnabled: true;
+  }
+}
+
+// Add Card variant
+declare module "@mui/material/Card" {
+  interface CardPropsVariantOverrides {
+    hoverEnabled: true;
+  }
+}
+
+// Add Chip variants
+declare module "@mui/material/Chip" {
+  interface ChipPropsVariantOverrides {
+    hoverEnabled: true;
+    technology: true;
+  }
+}

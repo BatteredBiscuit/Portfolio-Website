@@ -21,7 +21,6 @@ import Navbar from "@/components/Navbar";
 export default function Projects() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const isDarkMode = theme.palette.mode === "dark";
 
   return (
     <Box
@@ -38,11 +37,7 @@ export default function Projects() {
         sx={{ mt: isMobile ? 4 : 8, mb: isMobile ? 4 : 8 }}
       >
         <FadeIn>
-          <Typography
-            variant="h4"
-            gutterBottom
-            sx={{ mb: 4, color: theme.palette.text.primary, fontWeight: 600 }}
-          >
+          <Typography variant="h4" gutterBottom sx={{ mb: 4, fontWeight: 600 }}>
             My Projects
           </Typography>
         </FadeIn>
@@ -58,7 +53,6 @@ export default function Projects() {
                       height: "100%",
                       display: "flex",
                       flexDirection: "column",
-                      backgroundColor: theme.palette.background.paper,
                     }}
                   >
                     <CardContent sx={{ flexGrow: 1, p: isMobile ? 2.5 : 3 }}>
@@ -74,7 +68,8 @@ export default function Projects() {
                       </Typography>
                       <Typography
                         variant="body2"
-                        sx={{ mb: 2, color: theme.palette.text.secondary }}
+                        color="text.secondary"
+                        sx={{ mb: 2 }}
                       >
                         {project.description}
                       </Typography>
@@ -90,12 +85,7 @@ export default function Projects() {
                             key={techIndex}
                             label={tech}
                             size="small"
-                            sx={{
-                              backgroundColor: isDarkMode
-                                ? "rgba(96, 165, 250, 0.1)"
-                                : "rgba(37, 99, 235, 0.1)",
-                              color: theme.palette.primary.main,
-                            }}
+                            variant="technology"
                           />
                         ))}
                       </Stack>
@@ -113,7 +103,7 @@ export default function Projects() {
                           <Button
                             size="small"
                             href={project.githubUrl}
-                            sx={{ color: theme.palette.primary.main }}
+                            color="primary"
                           >
                             GitHub
                           </Button>
@@ -122,7 +112,7 @@ export default function Projects() {
                           <Button
                             size="small"
                             href={project.demoUrl}
-                            sx={{ color: theme.palette.primary.main }}
+                            color="primary"
                           >
                             Live Demo
                           </Button>
@@ -131,7 +121,7 @@ export default function Projects() {
                           <Button
                             size="small"
                             href={project.linkUrl}
-                            sx={{ color: theme.palette.primary.main }}
+                            color="primary"
                           >
                             {project.title} Link
                           </Button>

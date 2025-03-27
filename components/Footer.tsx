@@ -1,88 +1,120 @@
-import { Box, Container, IconButton, Link, Typography } from "@mui/material";
+"use client";
+
+import {
+  Box,
+  Container,
+  Grid,
+  Link,
+  Typography,
+  IconButton,
+  Stack,
+  useMediaQuery,
+} from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
-import XIcon from "@mui/icons-material/X";
+import { useTheme } from "@mui/material/styles";
 
 export default function Footer() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+  const currentYear = new Date().getFullYear();
+
   return (
     <Box
       component="footer"
       sx={{
-        py: 3,
+        backgroundColor:
+          theme.palette.mode === "dark"
+            ? theme.palette.background.paper
+            : theme.palette.background.default,
+        borderTop: `1px solid ${theme.palette.divider}`,
         mt: "auto",
-        backgroundColor: "background.paper",
-        borderTop: 1,
-        borderColor: "divider",
+        py: 3,
       }}
     >
       <Container maxWidth="lg">
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", sm: "row" },
-            justifyContent: "space-between",
-            alignItems: "center",
-            gap: 2,
-          }}
+        <Grid
+          container
+          spacing={3}
+          justifyContent="space-between"
+          alignItems="center"
         >
-          <Box sx={{ display: "flex", gap: 1 }}>
-            <IconButton
-              component="a"
-              href="https://github.com/BatteredBiscuit"
-              target="_blank"
-              aria-label="GitHub"
+          <Grid item xs={12} sm={6}>
+            <Typography
+              variant="body2"
+              color="text.secondary"
               sx={{
-                "&:hover": {
-                  color: "primary.main",
-                  "@media (hover: none)": {
-                    color: "inherit",
-                  },
-                },
+                textAlign: { xs: "center", sm: "left" },
+                mb: { xs: 2, sm: 0 },
               }}
             >
-              <GitHubIcon />
-            </IconButton>
-            <IconButton
-              component="a"
-              href="https://linkedin.com/in/hayden-o"
-              target="_blank"
-              aria-label="LinkedIn"
-            >
-              <LinkedInIcon />
-            </IconButton>
-            <IconButton
-              component="a"
-              href="https://twitter.com/hayden_oneill"
-              target="_blank"
-              aria-label="X (Twitter)"
-            >
-              <XIcon />
-            </IconButton>
-            <IconButton
-              component="a"
-              href="mailto:me@hayden-oneill.io"
-              aria-label="Email"
-            >
-              <EmailIcon />
-            </IconButton>
-          </Box>
+              © {currentYear} Hayden O'Neill. All rights reserved.
+            </Typography>
+          </Grid>
 
-          <Typography variant="body2" color="text.secondary">
-            © {new Date().getFullYear()} Made by Hayden O'Neill. All rights
-            reserved.
-          </Typography>
+          <Grid item xs={12} sm={6}>
+            <Stack
+              direction="row"
+              spacing={1}
+              sx={{
+                justifyContent: { xs: "center", sm: "flex-end" },
+              }}
+            >
+              <IconButton
+                component={Link}
+                href="https://www.linkedin.com/in/hayden-oneill/"
+                target="_blank"
+                aria-label="LinkedIn"
+                sx={{
+                  color: theme.palette.primary.main,
+                  transition: "transform 0.2s, color 0.2s",
+                  "&:hover": {
+                    color: "#0077B5", // LinkedIn blue
+                    transform: "translateY(-3px)",
+                  },
+                }}
+              >
+                <LinkedInIcon />
+              </IconButton>
 
-          <Link
-            href="https://github.com/BatteredBiscuit/portfolio-website"
-            target="_blank"
-            color="primary"
-            underline="hover"
-            variant="body2"
-          >
-            View Source Code
-          </Link>
-        </Box>
+              <IconButton
+                component={Link}
+                href="https://github.com/haydenoneill"
+                target="_blank"
+                aria-label="GitHub"
+                sx={{
+                  color: theme.palette.primary.main,
+                  transition: "transform 0.2s, color 0.2s",
+                  "&:hover": {
+                    color:
+                      theme.palette.mode === "dark" ? "#ffffff" : "#181717", // GitHub colors
+                    transform: "translateY(-3px)",
+                  },
+                }}
+              >
+                <GitHubIcon />
+              </IconButton>
+
+              <IconButton
+                component={Link}
+                href="mailto:hayden@haydenoneill.com"
+                aria-label="Email"
+                sx={{
+                  color: theme.palette.primary.main,
+                  transition: "transform 0.2s, color 0.2s",
+                  "&:hover": {
+                    color: theme.palette.secondary.main,
+                    transform: "translateY(-3px)",
+                  },
+                }}
+              >
+                <EmailIcon />
+              </IconButton>
+            </Stack>
+          </Grid>
+        </Grid>
       </Container>
     </Box>
   );

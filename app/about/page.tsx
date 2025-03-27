@@ -30,7 +30,6 @@ import Image from "next/image";
 export default function About() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const isDarkMode = theme.palette.mode === "dark";
   const [tabValue, setTabValue] = useState(0);
 
   const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -58,9 +57,6 @@ export default function About() {
                 elevation={2}
                 sx={{
                   p: 3,
-                  background: isDarkMode
-                    ? "linear-gradient(to right bottom, #1e293b, #0f172a)"
-                    : "linear-gradient(to right bottom, #ffffff, #f8f9fa)",
                   borderRadius: 3,
                   textAlign: "center",
                   position: "sticky",
@@ -89,14 +85,7 @@ export default function About() {
                 <Typography variant="subtitle1" color="text.secondary">
                   Software Developer
                 </Typography>
-                <Typography
-                  paragraph
-                  sx={{
-                    mt: 2,
-                    textAlign: "left",
-                    color: theme.palette.text.primary,
-                  }}
-                >
+                <Typography paragraph sx={{ mt: 2, textAlign: "left" }}>
                   Motivated final-year Computer Science student at Northumbria
                   University, on course to graduate with a first-class degree.
                   Jointly placed third in the second year with an 82% average.
@@ -118,9 +107,6 @@ export default function About() {
               <Paper
                 elevation={2}
                 sx={{
-                  background: isDarkMode
-                    ? "linear-gradient(to right bottom, #1e293b, #0f172a)"
-                    : "linear-gradient(to right bottom, #ffffff, #f8f9fa)",
                   borderRadius: 3,
                 }}
               >
@@ -158,7 +144,6 @@ export default function About() {
                           variant="h6"
                           gutterBottom
                           sx={{
-                            color: theme.palette.text.primary,
                             fontWeight: 500,
                             mb: 2,
                           }}
@@ -201,7 +186,6 @@ export default function About() {
                               sx={{
                                 display: "flex",
                                 alignItems: "center",
-                                color: theme.palette.text.primary,
                               }}
                             >
                               {year.year}
@@ -221,11 +205,7 @@ export default function About() {
                                     <Paper
                                       elevation={2}
                                       variant="hoverEnabled"
-                                      sx={{
-                                        p: 2,
-                                        background:
-                                          theme.palette.background.paper,
-                                      }}
+                                      sx={{ p: 2 }}
                                     >
                                       <Typography variant="subtitle2">
                                         {module.name}
@@ -267,10 +247,7 @@ export default function About() {
                               <Paper
                                 elevation={2}
                                 variant="hoverEnabled"
-                                sx={{
-                                  p: 2,
-                                  background: theme.palette.background.paper,
-                                }}
+                                sx={{ p: 2 }}
                               >
                                 <Typography variant="subtitle1" gutterBottom>
                                   {cert.name}
@@ -322,7 +299,6 @@ export default function About() {
                             variant="subtitle1"
                             gutterBottom
                             sx={{
-                              color: theme.palette.text.primary,
                               display: "flex",
                               alignItems: "center",
                             }}
@@ -342,11 +318,7 @@ export default function About() {
                                   <Paper
                                     elevation={2}
                                     variant="hoverEnabled"
-                                    sx={{
-                                      p: 2,
-                                      background:
-                                        theme.palette.background.paper,
-                                    }}
+                                    sx={{ p: 2 }}
                                   >
                                     <Typography variant="subtitle2">
                                       {qual.name}
@@ -390,19 +362,10 @@ export default function About() {
                                 key={skillIndex}
                                 label={skill.name}
                                 sx={{
-                                  background: isDarkMode
-                                    ? "#60a5fa"
-                                    : "#2563eb",
-                                  color: "#ffffff",
+                                  background: theme.palette.primary.main,
+                                  color: theme.palette.primary.contrastText,
                                   "&:hover": {
-                                    background: isDarkMode
-                                      ? "#2563eb"
-                                      : "#60a5fa",
-                                    "@media (hover: none)": {
-                                      background: isDarkMode
-                                        ? "#60a5fa"
-                                        : "#2563eb",
-                                    },
+                                    background: theme.palette.primary.dark,
                                   },
                                 }}
                                 icon={

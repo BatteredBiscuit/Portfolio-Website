@@ -15,7 +15,6 @@ import Navbar from "@/components/Navbar";
 export default function Home() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const isDarkMode = theme.palette.mode === "dark";
 
   return (
     <Box
@@ -36,9 +35,6 @@ export default function Home() {
             elevation={2}
             sx={{
               p: isMobile ? 4 : 6,
-              background: isDarkMode
-                ? "linear-gradient(to right bottom, #1e293b, #0f172a)"
-                : "linear-gradient(to right bottom, #ffffff, #f8fafc)",
               borderRadius: 3,
               textAlign: "center",
               mb: 4,
@@ -51,9 +47,7 @@ export default function Home() {
               sx={{
                 fontSize: isMobile ? "2.5rem" : "3.75rem",
                 fontWeight: 700,
-                backgroundImage: isDarkMode
-                  ? "linear-gradient(45deg, #60a5fa, #93c5fd)"
-                  : "linear-gradient(45deg, #2563eb, #3b82f6)",
+                backgroundImage: `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.primary.light})`,
                 backgroundClip: "text",
                 WebkitBackgroundClip: "text",
                 color: "transparent",
@@ -87,9 +81,6 @@ export default function Home() {
                     sx={{
                       p: isMobile ? 3 : 4,
                       height: "100%",
-                      background: isDarkMode
-                        ? "linear-gradient(to right bottom, #1e293b, #0f172a)"
-                        : "linear-gradient(to right bottom, #ffffff, #f8fafc)",
                       borderRadius: 3,
                     }}
                   >

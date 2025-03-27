@@ -2,6 +2,7 @@
 
 import { ReactNode, useEffect, useRef } from "react";
 import { Box } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
 interface FadeInProps {
   children: ReactNode;
@@ -11,6 +12,7 @@ interface FadeInProps {
 
 const FadeIn = ({ children, delay = 0, direction = "up" }: FadeInProps) => {
   const ref = useRef<HTMLDivElement>(null);
+  const theme = useTheme();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -49,7 +51,7 @@ const FadeIn = ({ children, delay = 0, direction = "up" }: FadeInProps) => {
       sx={{
         opacity: 0,
         transform: getTransform(),
-        transition: "opacity 0.6s ease-out, transform 0.6s ease-out",
+        transition: `opacity 0.6s ${theme.transitions.easing.easeOut}, transform 0.6s ${theme.transitions.easing.easeOut}`,
         transitionDelay: `${delay}s`,
         "&.fade-in-visible": {
           opacity: 1,
