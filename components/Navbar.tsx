@@ -38,6 +38,7 @@ const menuItems: MenuItem[] = [
       { text: "Projects", href: "/projects" },
     ],
   },
+  { text: "Blog", href: "/blog" },
 ];
 
 export default function Navbar() {
