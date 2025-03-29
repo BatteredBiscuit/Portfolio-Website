@@ -5,11 +5,11 @@ export default async function sitemap() {
   const baseUrl = "https://hayden-oneill.io";
 
   // Static routes
-  const routes = ["", "/about", "/projects", "/contact", "/blog"].map(
+  const routes = ["", "/about", "/projects", "/experience", "/blog"].map(
     (route) => ({
       url: `${baseUrl}${route}`,
       lastModified: new Date().toISOString(),
-      changeFrequency: "weekly",
+      changefreq: "weekly",
       priority: route === "" ? 1.0 : 0.8,
     })
   );
@@ -17,7 +17,7 @@ export default async function sitemap() {
   const postRoutes = blogs.map((blog) => ({
     url: `${baseUrl}/blog/${blog.id}`,
     lastModified: new Date(blog.date).toISOString(),
-    changeFrequency: "monthly",
+    changefreq: "monthly",
     priority: 0.6,
   }));
 
