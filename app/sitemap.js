@@ -1,8 +1,6 @@
-import { getBlogPosts } from "@/lib/blog";
+import { blogs } from "@/data/blogs";
 
 export default async function sitemap() {
-  const posts = getBlogPosts ? await getBlogPosts() : [];
-
   // Base URL of your website
   const baseUrl = "https://hayden-oneill.io";
 
@@ -16,9 +14,9 @@ export default async function sitemap() {
     })
   );
 
-  const postRoutes = posts.map((post) => ({
-    url: `${baseUrl}/blog/${post.id}`,
-    lastModified: new Date(post.date).toISOString(),
+  const postRoutes = blogs.map((blog) => ({
+    url: `${baseUrl}/blog/${blog.id}`,
+    lastModified: new Date(blog.date).toISOString(),
     changeFrequency: "monthly",
     priority: 0.6,
   }));
