@@ -64,7 +64,7 @@ export default function Footer() {
             >
               <IconButton
                 component={Link}
-                href="https://www.linkedin.com/in/hayden-oneill/"
+                href="http://www.linkedin.com/in/hayden-o/"
                 target="_blank"
                 aria-label="LinkedIn"
                 sx={{
@@ -81,7 +81,7 @@ export default function Footer() {
 
               <IconButton
                 component={Link}
-                href="https://github.com/haydenoneill"
+                href="https://github.com/BatteredBiscuit"
                 target="_blank"
                 aria-label="GitHub"
                 sx={{
@@ -99,7 +99,7 @@ export default function Footer() {
 
               <IconButton
                 component={Link}
-                href="mailto:hayden@haydenoneill.com"
+                href="mailto:me@hayden-oneill.io"
                 aria-label="Email"
                 sx={{
                   color: theme.palette.primary.main,

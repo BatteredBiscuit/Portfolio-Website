@@ -109,6 +109,7 @@ export default function Projects() {
                           <Button
                             size="small"
                             href={project.githubUrl}
+                            target="_blank"
                             color="primary"
                           >
                             GitHub
@@ -118,6 +119,7 @@ export default function Projects() {
                           <Button
                             size="small"
                             href={project.demoUrl}
+                            target="_blank"
                             color="primary"
                           >
                             Live Demo
@@ -127,6 +129,7 @@ export default function Projects() {
                           <Button
                             size="small"
                             href={project.linkUrl}
+                            target="_blank"
                             color="primary"
                           >
                             {project.title} Link
