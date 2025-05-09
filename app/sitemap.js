@@ -1,8 +1,8 @@
 import { blogs } from "@/data/blogs";
 
 export default async function sitemap() {
-  // Base URL of your website
-  const baseUrl = "https://hayden-oneill.io";
+  // Updated base URL to use www
+  const baseUrl = "https://www.hayden-oneill.io";
 
   // Static routes with more detailed configuration
   const routes = [
