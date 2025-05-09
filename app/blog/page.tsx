@@ -18,6 +18,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import { useRouter } from "next/navigation";
 import { searchBlogs, getAllTags, type Blog } from "@/data/blogs";
 import Navbar from "@/components/Navbar";
+import PageMetaTags from "@/components/PageMetaTags";
+import { pageMetadata } from "@/app/utils/metadata";
 
 export default function BlogPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -53,6 +55,10 @@ export default function BlogPage() {
     <Box
       sx={{ flexGrow: 1, background: "background.default", minHeight: "100vh" }}
     >
+      <PageMetaTags
+        title={pageMetadata.blog.title}
+        description={pageMetadata.blog.description}
+      />
       <Navbar />
       <Container maxWidth="lg" sx={{ py: 4 }}>
         <Typography

@@ -17,6 +17,8 @@ import FadeIn from "@/components/animations/FadeIn";
 import { useTheme } from "@mui/material/styles";
 import { projects } from "@/data/projects";
 import Navbar from "@/components/Navbar";
+import PageMetaTags from "@/components/PageMetaTags";
+import { pageMetadata } from "@/app/utils/metadata";
 
 export default function Projects() {
   const theme = useTheme();
@@ -30,6 +32,10 @@ export default function Projects() {
         minHeight: "100vh",
       }}
     >
+      <PageMetaTags
+        title={pageMetadata.projects.title}
+        description={pageMetadata.projects.description}
+      />
       <Navbar />
 
       <Container

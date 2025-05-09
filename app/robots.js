@@ -6,5 +6,6 @@ export default function robots() {
       disallow: ["/api/", "/admin/"],
     },
     sitemap: "https://hayden-oneill.io/sitemap.xml",
+    host: "https://hayden-oneill.io",
   };
 }

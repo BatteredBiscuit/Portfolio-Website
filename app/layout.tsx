@@ -64,9 +64,6 @@ export const metadata = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <head>
-        <link rel="canonical" href="https://hayden-oneill.io" />
-      </head>
       <body>
         <ClientThemeProvider>
           <div

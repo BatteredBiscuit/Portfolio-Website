@@ -11,6 +11,8 @@ import {
 import FadeIn from "@/components/animations/FadeIn";
 import { useTheme } from "@mui/material/styles";
 import Navbar from "@/components/Navbar";
+import PageMetaTags from "@/components/PageMetaTags";
+import { pageMetadata } from "@/app/utils/metadata";
 
 export default function Home() {
   const theme = useTheme();
@@ -24,6 +26,10 @@ export default function Home() {
         background: theme.palette.background.default,
       }}
     >
+      <PageMetaTags
+        title={pageMetadata.home.title}
+        description={pageMetadata.home.description}
+      />
       <Navbar />
 
       <Container

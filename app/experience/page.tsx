@@ -20,6 +20,8 @@ import FadeIn from "@/components/animations/FadeIn";
 import { experiences } from "@/data/experiences";
 import { useTheme } from "@mui/material/styles";
 import Navbar from "@/components/Navbar";
+import PageMetaTags from "@/components/PageMetaTags";
+import { pageMetadata } from "@/app/utils/metadata";
 
 export default function Experience() {
   const theme = useTheme();
@@ -33,6 +35,10 @@ export default function Experience() {
         background: theme.palette.background.default,
       }}
     >
+      <PageMetaTags
+        title={pageMetadata.experience.title}
+        description={pageMetadata.experience.description}
+      />
       <Navbar />
 
       <Container

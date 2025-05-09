@@ -26,6 +26,8 @@ import Navbar from "@/components/Navbar";
 import { skills } from "@/data/skills";
 import { useState } from "react";
 import Image from "next/image";
+import PageMetaTags from "@/components/PageMetaTags";
+import { pageMetadata } from "@/app/utils/metadata";
 
 export default function About() {
   const theme = useTheme();
@@ -44,6 +46,10 @@ export default function About() {
         background: theme.palette.background.default,
       }}
     >
+      <PageMetaTags
+        title={pageMetadata.about.title}
+        description={pageMetadata.about.description}
+      />
       <Navbar />
       <Container
         maxWidth="lg"

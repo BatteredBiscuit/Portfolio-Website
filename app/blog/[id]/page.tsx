@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import {
   Container,
@@ -15,6 +15,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { getBlogById } from "@/data/blogs";
 import ReactMarkdown from "react-markdown";
 import Navbar from "@/components/Navbar";
+import PageMetaTags from "@/components/PageMetaTags";
 
 export default function BlogPostPage() {
   const params = useParams();
@@ -53,6 +54,13 @@ export default function BlogPostPage() {
     <Box
       sx={{ flexGrow: 1, background: "background.default", minHeight: "100vh" }}
     >
+      <PageMetaTags
+        title={`${blog.title} | Blog | Hayden O'Neill`}
+        description={
+          blog.summary ||
+          `Read my blog post about ${blog.title}. Insights and thoughts on this topic.`
+        }
+      />
       <Navbar />
       <Container maxWidth="md" sx={{ py: 4 }}>
         <Button
