@@ -15,9 +15,9 @@ export function middleware(request: NextRequest) {
   if (hostname === "hayden-oneill.io") {
     url.host = "www.hayden-oneill.io";
 
-    // Use 301 permanent redirect with proper cache control
+    // Use 308 permanent redirect with proper cache control
     return NextResponse.redirect(url, {
-      status: 301,
+      status: 308,
       headers: {
         "Cache-Control": "max-age=3600",
       },
