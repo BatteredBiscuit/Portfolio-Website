@@ -58,6 +58,45 @@ As AI technology continues to evolve, integrating real-time data streams and imp
     `,
     image: "/images/blog/windturbine.jpeg",
   },
+  {
+    id: "starting-with-wordpress",
+    title: "Starting My WordPress Journey",
+    date: "2025-05-09",
+    tags: ["WordPress", "Gutenberg", "Web Development", "CMS"],
+    summary:
+      "My first steps into the world of WordPress, exploring the basics of building and customizing websites with the Gutenberg editor.",
+    content: `
+# Starting My WordPress Journey
+
+I've recently started learning WordPress, specifically focusing on the Gutenberg editor. After mostly building custom projects from scratch, I wanted to explore a more content-focused, user-friendly CMS that powers a huge portion of the web.
+
+## Why WordPress?
+
+WordPress is one of the most widely used content management systems in the world, known for its flexibility, community support, and powerful customization options. It's a great platform for building everything from personal blogs to full-scale business websites, making it a valuable tool for any web developer.
+
+## Getting Started with Gutenberg
+
+I followed [this YouTube tutorial](https://www.youtube.com/watch?v=ERIz3diT9Sk) to get up to speed. It covered the basics, including:
+
+- Setting up a WordPress site
+- Understanding the Gutenberg block editor
+- Creating pages and posts
+- Customizing layouts and content blocks
+
+This was a great introduction, helping me understand the core concepts and features of WordPress without getting too overwhelmed.
+
+## First Impressions
+
+One thing that stood out to me was how quickly you can get a site up and running. Gutenberg's block-based approach makes it easy to design pages without touching a line of code, though I can see the appeal of adding custom HTML and CSS for more control.
+
+## Next Steps
+
+Next, I plan to dive deeper into custom themes, plugins, and more advanced WordPress features. I'm also interested in exploring the performance and SEO aspects of WordPress, as well as integrating it with other tools and platforms.
+
+I’ll keep updating this blog as I learn more and take on bigger projects.
+  `,
+    image: "/images/blog/wordpress.png",
+  },
 ];
 
 // Helper function to search blogs
