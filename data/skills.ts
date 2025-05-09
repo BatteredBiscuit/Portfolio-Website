@@ -28,8 +28,11 @@ export const skills: Skill[] = [
       { name: "Next.js", imagePath: "images/skill/nextjs.png" },
       { name: "HTML5", imagePath: "images/skill/html5.png" },
       { name: "CSS3", imagePath: "images/skill/css3.png" },
+      { name: "SASS", imagePath: "images/skill/sass.png" },
+      { name: "Bootstrap", imagePath: "images/skill/bootstrap.png" },
       { name: "Material-UI", imagePath: "images/skill/materialui.png" },
       { name: "Tailwind CSS", imagePath: "images/skill/tailwindcss.png" },
+      { name: "jQuery", imagePath: "images/skill/jquery.svg" },
     ],
   },
   {
@@ -71,6 +74,10 @@ export const skills: Skill[] = [
         name: "Microsoft Office",
         imagePath: "images/skill/microsoftoffice.png",
       },
+      { name: "Wordpress", imagePath: "images/skill/wordpress.png" },
+      { name: "APIs" },
+      { name: "SEO" },
+      { name: "Web Protocols" },
     ],
   },
   {
