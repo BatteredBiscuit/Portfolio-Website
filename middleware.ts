@@ -11,11 +11,18 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Redirect www to non-www
+  // Redirect www to non-www (for both users and bots)
   if (hostname.startsWith("www.")) {
     const newHostname = hostname.replace(/^www\./, "");
     url.host = newHostname;
-    return NextResponse.redirect(url);
+
+    // Use 301 permanent redirect with proper cache control
+    return NextResponse.redirect(url, {
+      status: 301,
+      headers: {
+        "Cache-Control": "max-age=3600",
+      },
+    });
   }
 
   return NextResponse.next();
