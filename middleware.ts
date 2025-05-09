@@ -4,6 +4,12 @@ import { NextResponse } from "next/server";
 export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
   const hostname = request.headers.get("host") || "";
+  const path = request.nextUrl.pathname;
+
+  // Skip redirection for sitemap.xml and robots.txt
+  if (path === "/sitemap.xml" || path === "/robots.txt") {
+    return NextResponse.next();
+  }
 
   // Redirect www to non-www
   if (hostname.startsWith("www.")) {
