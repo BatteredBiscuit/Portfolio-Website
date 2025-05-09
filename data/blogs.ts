@@ -246,6 +246,73 @@ Cardex-App has been a great project for learning the ins and outs of full-stack 
   `,
     image: "/images/blog/cards.webp",
   },
+  {
+    id: "construction-weather-dashboard",
+    title:
+      "My Cloud Computing Module – Building a Construction Weather Dashboard",
+    date: "2025-05-09",
+    tags: [
+      "Cloud Computing",
+      "PHP",
+      "JavaScript",
+      "jQuery",
+      "Azure",
+      "OpenWeather API",
+      "Google Maps API",
+      "LAMP Stack",
+      "MySQL",
+      "CSS",
+    ],
+    summary:
+      "How I built a construction weather dashboard using PHP, JavaScript, jQuery, OpenWeather API, Google Maps API, and a LAMP stack on Azure for my cloud computing module.",
+    content: `
+# My Cloud Computing Module – Building a Construction Weather Dashboard
+
+For my cloud computing module, I had to build a web application that acted as a construction site management dashboard, providing real-time weather updates, safety warnings, and location information for various construction sites. This project required setting up a virtual machine, configuring a LAMP stack, and integrating multiple APIs to create a comprehensive tool for site managers.
+
+## Tech Stack
+
+For this project, I used:
+
+- **PHP** – For server-side logic and API integration
+- **JavaScript** – For client-side interactivity and DOM manipulation
+- **jQuery** – For simplified AJAX calls and animations
+- **MySQL** – For storing site data, user information, and historical weather records
+- **CSS** – For styling and responsive design
+- **Azure VM (LAMP Stack)** – For hosting the web app
+- **OpenWeather API** – For real-time weather data and historical forecasts
+- **Google Maps API** – For displaying site locations on an interactive map
+
+## Key Features
+
+Some of the main features of the construction weather dashboard include:
+
+- **Site Management** – Users can add, edit, and delete construction sites, including their location and project details
+- **Real-Time Weather Updates** – Current weather data for each site, including temperature, wind speed, and precipitation
+- **8-Day Forecast** – Detailed weather predictions for the next 8 days
+- **Historical Weather Data** – Users can select a past date to see historical weather conditions at a given site
+- **Safety Warnings** – Automated alerts based on weather conditions, like high winds for crane operations or heavy rain for excavation work
+- **Interactive Maps** – Uses the Google Maps API to show site locations and weather overlays
+
+## Challenges and Lessons Learned
+
+Setting up the LAMP stack on Azure was a bit challenging, especially configuring the VM for secure remote access and database management. I also had to work on optimizing API calls to reduce latency and avoid exceeding API rate limits. Managing the database structure to store both site details and historical weather data efficiently was another interesting challenge.
+
+## Next Steps
+
+If I revisit this project, I’d like to add:
+
+- Role-based access for different user types (e.g., site managers, safety inspectors)
+- Real-time notifications for severe weather alerts
+- Improved data visualization for easier site management
+- Integration with IoT sensors for on-site weather monitoring
+
+## Final Thoughts
+
+This project gave me a solid understanding of full-stack development, cloud deployment, and API integration. It also taught me a lot about building practical, real-world applications for specific industries like construction.
+  `,
+    image: "/images/blog/construction.jpg",
+  },
 ];
 
 // Helper function to search blogs
