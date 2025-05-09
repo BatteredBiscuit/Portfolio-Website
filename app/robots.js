@@ -5,7 +5,7 @@ export default function robots() {
       allow: "/",
       disallow: ["/api/", "/admin/"],
     },
-    sitemap: "https://hayden-oneill.io/sitemap.xml",
-    host: "https://hayden-oneill.io",
+    sitemap: "https://www.hayden-oneill.io/sitemap.xml",
+    host: "https://www.hayden-oneill.io",
   };
 }
