@@ -192,11 +192,14 @@ I plan to dive deeper into optimizing page load speeds, structured data, and oth
     date: "2025-05-09",
     tags: [
       "Next.js",
+      "React",
       "Full Stack",
       "Authentication",
       "Database",
       "Web Development",
       "Neon DB",
+      "Vercel",
+      "GitHub",
     ],
     summary:
       "How my friend and I built Cardex-App, a full-stack trading card tracker with user authentication and a Neon database.",
