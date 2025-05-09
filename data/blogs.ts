@@ -97,6 +97,155 @@ I’ll keep updating this blog as I learn more and take on bigger projects.
   `,
     image: "/images/blog/wordpress.png",
   },
+  {
+    id: "building-my-portfolio-with-nextjs",
+    title: "Building My Portfolio with Next.js",
+    date: "2025-05-09",
+    tags: [
+      "Next.js",
+      "React",
+      "Portfolio",
+      "Web Development",
+      "Vercel",
+      "GitHub",
+    ],
+    summary:
+      "How I built my personal portfolio website, hayden-oneill.io, using Next.js, GitHub, and Vercel.",
+    content: `
+# Building My Portfolio with Next.js
+
+I recently built my personal portfolio website, [hayden-oneill.io](https://hayden-oneill.io), using Next.js. I wanted a place to showcase my projects, share my blogs, and create a central hub for my work as a developer.
+
+## Why I Chose Next.js
+
+Next.js is a React framework that offers powerful features like server-side rendering, static site generation, and API routes, making it perfect for building fast, SEO-friendly websites. Plus, the new App Router made it easier to structure my site as it grew.
+
+## The Tech Stack
+
+For this project, I used:
+
+- **Next.js (App Router)** - For routing and server-side logic
+- **TypeScript** - For type safety and better code quality
+- **Vercel** - For serverless hosting and fast global content delivery
+- **GitHub** - For version control and CI/CD
+
+## Key Features
+
+Some of the main features of my portfolio include:
+
+- A clean, responsive design
+- Project showcases and blog posts
+- Fast load times with static generation
+- Easy content management with Markdown
+
+## Challenges and Lessons Learned
+
+Getting the site structure right with the App Router took some time, but it made the site more maintainable in the long run. I also had to learn a bit about managing TypeScript types across different components, which was a good learning experience.
+
+## Next Steps
+
+I plan to add more projects and blogs as I learn new technologies, and maybe even experiment with interactive components and real-time data features in the future.
+  `,
+    image: "/images/blog/nextjs.jpg",
+  },
+  {
+    id: "learning-seo-and-site-optimization",
+    title: "Learning SEO and Site Optimization",
+    date: "2025-05-09",
+    tags: [
+      "SEO",
+      "Web Development",
+      "Next.js",
+      "Sitemaps",
+      "Middleware",
+      "Vercel",
+    ],
+    summary:
+      "Exploring the world of SEO, sitemaps, robots.txt, and middleware to improve my portfolio site's visibility.",
+    content: `
+# Learning SEO and Site Optimization
+
+Once I built my portfolio site, [hayden-oneill.io](https://hayden-oneill.io), I realized how important it is to make sure it’s visible to search engines like Google. This led me down the path of learning about SEO, sitemaps, and how to manage search indexing properly.
+
+## What I’ve Learned So Far
+
+Some of the key SEO techniques I've been learning include:
+
+- **Sitemaps**: I generated a sitemap to help search engines understand my site structure and index it more efficiently.
+- **robots.txt**: I created a robots.txt file to control what pages and directories search engines can crawl.
+- **Meta Tags and Open Graph**: Adding meta tags for better social sharing previews and search engine descriptions.
+- **Middleware**: I experimented with Next.js middleware to handle redirects, headers, and other server-side logic.
+
+## Tools and Hosting
+
+I’m hosting the site on **Vercel**, which integrates seamlessly with **GitHub** for version control and continuous deployment. This setup makes it easy to push updates and experiment with new SEO techniques.
+
+## Next Steps
+
+I plan to dive deeper into optimizing page load speeds, structured data, and other advanced SEO techniques to improve my site's search ranking and user experience.
+  `,
+    image: "/images/blog/seo.jpg",
+  },
+  {
+    id: "building-cardex-app",
+    title: "Building Cardex-App – A Full-Stack Trading Card Tracker",
+    date: "2025-05-09",
+    tags: [
+      "Next.js",
+      "Full Stack",
+      "Authentication",
+      "Database",
+      "Web Development",
+      "Neon DB",
+    ],
+    summary:
+      "How my friend and I built Cardex-App, a full-stack trading card tracker with user authentication and a Neon database.",
+    content: `
+# Building Cardex-App – A Full-Stack Trading Card Tracker
+
+Recently, my friend and I launched [Cardex-App](https://cardex-app.com), a full-stack web application for tracking trading card collections. It’s a comprehensive project with both front-end and back-end components, designed to help collectors keep track of their cards, wishlist future pickups, and organize their collections effectively.
+
+## Tech Stack
+
+For this project, we used:
+
+- **Next.js (App Router)** – For the front-end and server-side logic
+- **TypeScript** – For cleaner, strongly-typed code
+- **Neon DB** – For a fully managed, scalable PostgreSQL database
+- **NextAuth.js** – For secure user authentication and session management
+- **GitHub** – For version control and collaboration
+- **Vercel** – For seamless deployment and fast global content delivery
+
+## Key Features
+
+Some of the main features of Cardex-App include:
+
+- **User Authentication** – Secure login, registration, and password management
+- **Email Verification** – To ensure only real users have access
+- **Personal Collection Management** – Users can add, edit, and organize their cards
+- **Wishlists** – Keep track of the cards you’re looking to add to your collection
+- **Responsive Design** – Optimized for mobile and desktop users
+- **Real-Time Data** – Fast, reliable database interactions with Neon DB
+
+## Challenges and Lessons Learned
+
+One of the biggest challenges was setting up a reliable and secure authentication system, including email verification. We also had to ensure the database structure was flexible enough to handle different card sets, types, and user preferences without becoming overly complex.
+
+## Next Steps
+
+We plan to add more features, like:
+
+- Advanced search and filtering
+- Improved collection analytics
+- Personal dashboards for tracking progress
+- Enhanced mobile experience
+
+## Final Thoughts
+
+Cardex-App has been a great project for learning the ins and outs of full-stack development, and it's a platform we’re excited to keep improving as our skills grow.
+  `,
+    image: "/images/blog/cards.webp",
+  },
 ];
 
 // Helper function to search blogs
