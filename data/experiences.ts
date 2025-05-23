@@ -9,7 +9,7 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     title: "Junior Front End Web Developer",
-    company: "Canny Creatice",
+    company: "Canny Creative",
     period: "June 2025 - Present",
     description:
       "Working as part of a team to service client accounts and create websites, working closely with the design and content teams to bring their ideas to life.",
